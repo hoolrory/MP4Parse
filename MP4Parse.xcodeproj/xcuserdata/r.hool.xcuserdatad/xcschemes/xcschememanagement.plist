@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MP4Parse.xcscheme_^#shared#^_</key>
+		<key>MP4Parse.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05DE45A513378714002269FF</key>
+		<key>1F6E3A3B1D45177A0008CDD5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
