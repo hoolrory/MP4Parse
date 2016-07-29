@@ -44,6 +44,13 @@ std::string MVHD::description( void )
     
     o << "MP4 Atom:           " << this->_type << "\n";
     
+    o << "                      - Creation time:     " << this->_creationTime     << "\n";
+    o << "                      - Modification time: " << this->_modificationTime << "\n";
+    o << "                      - Time scale:        " << this->_timeScale        << "\n";
+    o << "                      - Duration:          " << this->_duration         << "\n";
+    o << "                      - Rate:              " << this->_rate             << "\n";
+    o << "                      - Volume:            " << this->_volume           << "\n";
+   
     return o.str();
 }
 
