@@ -47,12 +47,17 @@ namespace MP4
             
             Atom * _parent;
             std::string _type;
+            int _dataLength;
             
         public:
             
             virtual ~Atom( void );
             
             std::string getType( void );
+        
+            int getLength( void );
+        
+            void setLength( int dataLength );
             
             virtual std::string description( void ) = 0;
     };
