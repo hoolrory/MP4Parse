@@ -38,11 +38,11 @@ UDTA::UDTA( void )
     this->_type.append( "UDTA" );
 }
 
-std::string UDTA::description( void )
+std::string UDTA::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

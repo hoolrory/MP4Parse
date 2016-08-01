@@ -59,7 +59,7 @@ namespace MP4
         
             void setLength( int dataLength );
             
-            virtual std::string description( void ) = 0;
+            virtual std::string description( int depth ) = 0;
     };
 }
 

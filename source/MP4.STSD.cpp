@@ -38,11 +38,11 @@ STSD::STSD( void )
     this->_type.append( "STSD" );
 }
 
-std::string STSD::description( void )
+std::string STSD::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

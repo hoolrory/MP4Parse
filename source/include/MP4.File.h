@@ -53,7 +53,7 @@ namespace MP4
             File( void ) : ContainerAtom( ( char * )"" )
             {}
             
-            std::string description( void );
+            std::string description( int depth );
     };
 }
 

@@ -38,11 +38,11 @@ STDP::STDP( void )
     this->_type.append( "STDP" );
 }
 
-std::string STDP::description( void )
+std::string STDP::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

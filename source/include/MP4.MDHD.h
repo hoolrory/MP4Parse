@@ -56,7 +56,7 @@ namespace MP4
             
             MDHD( void );
             
-            std::string description( void );
+            std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };
 }

@@ -38,11 +38,11 @@ SDTP::SDTP( void )
     this->_type.append( "SDTP" );
 }
 
-std::string SDTP::description( void )
+std::string SDTP::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

@@ -38,11 +38,11 @@ TKHD::TKHD( void )
     this->_type.append( "TKHD" );
 }
 
-std::string TKHD::description( void )
+std::string TKHD::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

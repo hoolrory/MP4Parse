@@ -82,16 +82,16 @@ int ContainerAtom::lengthOfChildren( void )
     return length;
 }
 
-std::string ContainerAtom::description( void )
+std::string ContainerAtom::description( int depth )
 {
     std::string s;
     std::multimap< std::string, Atom * >::iterator it;
     
-    s += "MP4 Container Atom: " + this->_type + "\n";
+    s += std::string(depth, '-') + this->_type + "\n";
     
     for( it = this->_children.begin(); it != this->_children.end(); ++it )
     {
-        s.append( ( ( Atom * )( it->second ) )->description() );
+       s.append( ( ( Atom * )( it->second ) )->description( depth + 1 ) );
     }
     
     return s;

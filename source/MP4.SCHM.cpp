@@ -38,11 +38,11 @@ SCHM::SCHM( void )
     this->_type.append( "SCHM" );
 }
 
-std::string SCHM::description( void )
+std::string SCHM::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

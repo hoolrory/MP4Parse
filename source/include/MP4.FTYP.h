@@ -54,7 +54,7 @@ namespace MP4
             FTYP( void );
             ~FTYP( void );
             
-            std::string description( void );
+            std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };
 }

@@ -38,11 +38,11 @@ STZ2::STZ2( void )
     this->_type.append( "STZ2" );
 }
 
-std::string STZ2::description( void )
+std::string STZ2::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

@@ -38,11 +38,11 @@ FRMA::FRMA( void )
     this->_type.append( "FRMA" );
 }
 
-std::string FRMA::description( void )
+std::string FRMA::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

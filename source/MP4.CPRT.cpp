@@ -38,11 +38,11 @@ CPRT::CPRT( void )
     this->_type.append( "CPRT" );
 }
 
-std::string CPRT::description( void )
+std::string CPRT::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

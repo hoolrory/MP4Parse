@@ -33,7 +33,7 @@
 
 using namespace MP4;
 
-std::string File::description( void )
+std::string File::description( int depth )
 {
     std::string s;
     std::multimap< std::string, Atom * >::iterator it;
@@ -42,7 +42,7 @@ std::string File::description( void )
     
     for( it = this->_children.begin(); it != this->_children.end(); ++it )
     {
-        s.append( ( ( Atom * )( it->second ) )->description() );
+        s.append( ( ( Atom * )( it->second ) )->description( depth ) );
     }
     
     return s;

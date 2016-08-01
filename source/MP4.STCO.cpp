@@ -38,11 +38,11 @@ STCO::STCO( void )
     this->_type.append( "STCO" );
 }
 
-std::string STCO::description( void )
+std::string STCO::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

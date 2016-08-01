@@ -38,11 +38,11 @@ BXML::BXML( void )
     this->_type.append( "BXML" );
 }
 
-std::string BXML::description( void )
+std::string BXML::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

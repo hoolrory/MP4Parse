@@ -69,14 +69,14 @@ UnknownAtom::UnknownAtom( char * t )
     std::transform( this->_type.begin(), this->_type.end(), this->_type.begin(), ::toupper );
 }
 
-std::string UnknownAtom::description( void )
+std::string UnknownAtom::description( int depth )
 {
-    std::string s = std::string( "MP4 Atom:           unknown (" );
-    
-    s.append( this->_type );
-    s.append( ")\n" );
-    
-    return s;
+   
+    std::ostringstream o;
+   
+    o << std::string(depth, '-') << "unknown (" << this->_type << "\n";
+   
+    return o.str();
 }
 
 void UnknownAtom::processData( MP4::BinaryStream * stream, size_t length )

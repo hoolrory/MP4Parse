@@ -38,11 +38,11 @@ MFRO::MFRO( void )
     this->_type.append( "MFRO" );
 }
 
-std::string MFRO::description( void )
+std::string MFRO::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

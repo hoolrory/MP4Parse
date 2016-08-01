@@ -38,11 +38,11 @@ CTTS::CTTS( void )
     this->_type.append( "CTTS" );
 }
 
-std::string CTTS::description( void )
+std::string CTTS::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

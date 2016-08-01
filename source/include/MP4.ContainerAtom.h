@@ -57,8 +57,8 @@ namespace MP4
             Atom* findChild( const std::string &type );
             bool hasChildren( void );
             unsigned int numberOfChildren( void );
-            std::string description( void );
             int lengthOfChildren( void );
+            std::string description( int depth );
     };
 }
 

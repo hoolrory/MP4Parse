@@ -38,11 +38,11 @@ MDAT::MDAT( void )
     this->_type.append( "MDAT" );
 }
 
-std::string MDAT::description( void )
+std::string MDAT::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

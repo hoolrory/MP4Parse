@@ -38,11 +38,11 @@ XML::XML( void )
     this->_type.append( "XML" );
 }
 
-std::string XML::description( void )
+std::string XML::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << " \n";
+    o << std::string(depth, '-') << this->_type << " \n";
     
     return o.str();
 }

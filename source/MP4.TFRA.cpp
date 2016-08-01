@@ -38,11 +38,11 @@ TFRA::TFRA( void )
     this->_type.append( "TFRA" );
 }
 
-std::string TFRA::description( void )
+std::string TFRA::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

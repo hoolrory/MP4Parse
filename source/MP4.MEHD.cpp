@@ -38,11 +38,11 @@ MEHD::MEHD( void )
     this->_type.append( "MEHD" );
 }
 
-std::string MEHD::description( void )
+std::string MEHD::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

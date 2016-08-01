@@ -336,7 +336,8 @@ Parser::Parser( char * filename )
         ( ( MP4::DataAtom * )atom )->processData( this->_stream, dataLength );
     }
     
-    std::cout << this->_file->description();
+    int depth = 0;
+    std::cout << this->_file->description( depth );
 }
 
 Parser::~Parser( void )

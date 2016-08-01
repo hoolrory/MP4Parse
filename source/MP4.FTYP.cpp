@@ -48,14 +48,14 @@ FTYP::~FTYP( void )
     }
 }
 
-std::string FTYP::description( void )
+std::string FTYP::description( int depth )
 {
     std::string s;
     std::string * brand;
     std::vector< std::string * >::iterator it;
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     o << "                      - Major brand:       " << _majorBrand << "\n";
     o << "                      - Minor version:     " << _minorVersion << "\n";
     o << "                      - Compatible brands: \n";

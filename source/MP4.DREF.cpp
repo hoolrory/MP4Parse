@@ -38,11 +38,11 @@ DREF::DREF( void )
     this->_type.append( "DREF" );
 }
 
-std::string DREF::description( void )
+std::string DREF::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

@@ -38,11 +38,11 @@ ELST::ELST( void )
     this->_type.append( "ELST" );
 }
 
-std::string ELST::description( void )
+std::string ELST::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

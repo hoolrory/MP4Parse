@@ -38,11 +38,11 @@ TREF::TREF( void )
     this->_type.append( "TREF" );
 }
 
-std::string TREF::description( void )
+std::string TREF::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

@@ -38,11 +38,11 @@ SCHI::SCHI( void )
     this->_type.append( "SCHI" );
 }
 
-std::string SCHI::description( void )
+std::string SCHI::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

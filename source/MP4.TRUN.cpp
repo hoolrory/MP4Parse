@@ -38,11 +38,11 @@ TRUN::TRUN( void )
     this->_type.append( "TRUN" );
 }
 
-std::string TRUN::description( void )
+std::string TRUN::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

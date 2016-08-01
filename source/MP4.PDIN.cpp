@@ -38,11 +38,11 @@ PDIN::PDIN( void )
     this->_type.append( "PDIN" );
 }
 
-std::string PDIN::description( void )
+std::string PDIN::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }

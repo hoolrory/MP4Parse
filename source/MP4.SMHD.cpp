@@ -38,11 +38,11 @@ SMHD::SMHD( void )
     this->_type.append( "SMHD" );
 }
 
-std::string SMHD::description( void )
+std::string SMHD::description( int depth )
 {
     std::ostringstream o;
     
-    o << "MP4 Atom:           " << this->_type << "\n";
+    o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }
