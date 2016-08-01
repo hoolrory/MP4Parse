@@ -58,6 +58,7 @@ namespace MP4
             bool hasChildren( void );
             unsigned int numberOfChildren( void );
             std::string description( void );
+            int lengthOfChildren( void );
     };
 }
 

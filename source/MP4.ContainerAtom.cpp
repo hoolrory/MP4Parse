@@ -71,6 +71,17 @@ unsigned int ContainerAtom::numberOfChildren( void )
     return _children.size();
 }
 
+int ContainerAtom::lengthOfChildren( void )
+{
+    int length = 0;
+    std::multimap< std::string, Atom * >::iterator it;
+    for( it = this->_children.begin(); it != this->_children.end(); ++it )
+    {
+        length += ( ( Atom * )( it->second ) )->getLength();
+    }
+    return length;
+}
+
 std::string ContainerAtom::description( void )
 {
     std::string s;
