@@ -72,12 +72,15 @@ namespace MP4
             BinaryStream * _stream;
             File         * _file;
             bool           _verboseLogging;
-            
+        
+            MP4::Atom* parseNextAtom();
+        
         public:
             
             Parser( void );
             Parser( char * filename );
             ~Parser( void );
+        
     };
 }
 
