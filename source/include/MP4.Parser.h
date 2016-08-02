@@ -71,6 +71,7 @@ namespace MP4
             
             BinaryStream * _stream;
             File         * _file;
+            bool           _verboseLogging;
             
         public:
             

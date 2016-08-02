@@ -31,6 +31,8 @@
 
 #include "MP4.Parser.h"
 #include "atoms.h"
+#include <stack>
+#include <stdio.h>
 
 using namespace MP4;
 
@@ -73,14 +75,37 @@ Parser::Parser( char * filename )
     MP4::Atom          * atom;
     MP4::ContainerAtom * containerAtom;
     MP4::ContainerAtom * parentAtom;
+    int                  parentDepth;
     
+    std::stack<MP4::ContainerAtom*> previousParents;
+   
     this->_stream = new BinaryStream( filename );
     this->_file   = new MP4::File();
+    FILE * pFile;
+    long size = 0;
+    this->_verboseLogging = false;
+    
+    pFile = fopen (filename,"rb");
+    if(pFile==NULL) perror ("Error opening file");
+    else
+    {
+        fseek (pFile, 0, SEEK_END);   // non-portable
+        size=ftell (pFile);
+        fclose (pFile);
+    }
+    this->_file->setLength(size);
+    
+    if( _verboseLogging )
+    {
+        std::cout << "File size = " << size <<  "\n";
+    }
+    
     data          = NULL;
     atom          = NULL;
     containerAtom = NULL;
     container     = false;
     parentAtom    = this->_file;
+    parentDepth   = 0;
     
     memset( type, 0, 5 );
     
@@ -99,7 +124,10 @@ Parser::Parser( char * filename )
         {
             dataLength = length - 8;
         }
-        
+        if( _verboseLogging )
+        {
+            std::cout << "Found " << type << " atom, length = " << dataLength << "\n";
+        }
         /* Container atoms */
         if
         (
@@ -121,11 +149,32 @@ Parser::Parser( char * filename )
         )
         {
             containerAtom = new MP4::ContainerAtom( type );
+            containerAtom->setLength( (int)dataLength );
+            
+            if( _verboseLogging )
+            {
+                std::cout << "Parent lengthOfChildren = " << parentAtom->lengthOfChildren() << ", new atom length = " << containerAtom->getLength() << ", parent total length = " << parentAtom->getLength() << "\n";
+            }
+            while( parentAtom->lengthOfChildren() + containerAtom->getLength() > parentAtom->getLength()) {
+                if( parentDepth == 0 ) {
+                    break;
+                }
+                parentAtom = previousParents.top();
+                previousParents.pop();
+                parentDepth--;
+                
+                std::cout << " ---- Resetting parent to " << parentAtom->getType() << " at "<< containerAtom->getType()<<" \n";
+            }
             
             parentAtom->addChild( containerAtom );
             
+            previousParents.push(parentAtom);
             parentAtom = containerAtom;
-            
+            if( _verboseLogging )
+            {
+                std::cout << " ---- Setting parent to " << type << " \n";
+            }
+            parentDepth++;
             continue;
         }
         
@@ -331,11 +380,29 @@ Parser::Parser( char * filename )
             atom = new MP4::UnknownAtom( type );
         }
         
-        parentAtom->addChild( atom );
         
+        atom->setLength( (int)dataLength );
+        if( _verboseLogging )
+        {
+            std::cout << "Parent lengthOfChildren = " << parentAtom->lengthOfChildren() << ", new atom length = " << containerAtom->getLength() << ", parent total length = " << parentAtom->getLength() << "\n";
+        }
+        while( parentAtom->lengthOfChildren() + atom->getLength() > parentAtom->getLength()) {
+            if( parentDepth == 0 ) {
+                break;
+            }
+            parentAtom = previousParents.top();
+            previousParents.pop();
+            parentDepth--;
+            
+            if( _verboseLogging )
+            {
+                std::cout << " ----- Resetting parent to " << parentAtom->getType() << " at "<< atom->getType()<<" \n";
+            }
+        }
+        
+        parentAtom->addChild( atom );
         ( ( MP4::DataAtom * )atom )->processData( this->_stream, dataLength );
     }
-    
     int depth = 0;
     std::cout << this->_file->description( depth );
 }
