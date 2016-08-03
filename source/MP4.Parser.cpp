@@ -106,8 +106,10 @@ Parser::Parser( char * filename )
             parentAtom = previousParents.top();
             previousParents.pop();
             parentDepth--;
-            
-            std::cout << " ---- Resetting parent to " << parentAtom->getType() << " at "<< atom->getType()<<" \n";
+            if( _verboseLogging )
+            {
+                std::cout << " ---- Resetting parent to " << parentAtom->getType() << " at "<< atom->getType()<<" \n";
+            }
         }
         parentAtom->addChild(atom);
         
