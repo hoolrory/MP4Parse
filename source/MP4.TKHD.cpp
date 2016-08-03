@@ -49,5 +49,33 @@ std::string TKHD::description( int depth )
 
 void TKHD::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    FullBox::processData( stream, length );
+    
+    if( this->_version == 1 )
+    {
+        this->_creationTime     = stream->readBigEndianUnsignedLong();
+        this->_modificationTime = stream->readBigEndianUnsignedLong();
+        this->_trackId          = stream->readBigEndianUnsignedInteger();
+        stream->readBigEndianUnsignedInteger();
+        this->_duration         = stream->readBigEndianUnsignedLong();
+    }
+    else
+    {
+        this->_creationTime     = stream->readBigEndianUnsignedInteger();
+        this->_modificationTime = stream->readBigEndianUnsignedInteger();
+        this->_trackId        = stream->readBigEndianUnsignedInteger();
+        stream->readBigEndianUnsignedInteger();
+        this->_duration         = stream->readBigEndianUnsignedShort();
+    }
+    
+    stream->readBigEndianUnsignedInteger();
+    stream->readBigEndianUnsignedInteger();
+    this->_layer = stream->readBigEndianUnsignedShort();
+    
+    this->_alternateGroup = stream->readBigEndianUnsignedShort();
+    this->_volume = stream->readFloat();
+    stream->readBigEndianUnsignedShort();
+    stream->readMatrix( &( this->_matrix ) );
+    this->_width = stream->readBigEndianUnsignedInteger() / 65536;
+    this->_height = stream->readBigEndianUnsignedInteger() / 65536;
 }

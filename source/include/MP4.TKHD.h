@@ -33,19 +33,29 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.DataAtom.h"
+#include "MP4.FullBox.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class TKHD : DataAtom
+    class TKHD : FullBox
     {
         private:
             
             
         protected:
-            
-            
+        
+            uint64_t _creationTime;
+            uint64_t _modificationTime;
+            uint64_t _trackId;
+            uint64_t _duration;
+            uint32_t _layer;
+            uint32_t _alternateGroup;
+            float    _volume;
+            matrix   _matrix;
+            double   _width;
+            double   _height;
+        
         public:
             
             TKHD( void );
