@@ -46,7 +46,7 @@ namespace MP4
             
         protected:
             
-            std::multimap< std::string, Atom * > _children;
+            std::vector< Atom * > _children;
             
         public:
             

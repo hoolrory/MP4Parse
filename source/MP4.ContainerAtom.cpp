@@ -42,11 +42,9 @@ ContainerAtom::ContainerAtom( char * type )
 
 ContainerAtom::~ContainerAtom( void )
 {
-    std::multimap< std::string, Atom * >::iterator it;
-    
-    for( it = this->_children.begin(); it != this->_children.end(); ++it )
+    for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
     {
-        delete ( Atom * )( it->second );
+        delete ( *it );
     }
 
 }
@@ -58,7 +56,7 @@ void ContainerAtom::addChild( Atom * a )
         return;
     }
     
-    this->_children.insert( std::pair< std::string, Atom * >( a->getType(), a ) );
+    this->_children.push_back( a );
 }
 
 bool ContainerAtom::hasChildren( void )
@@ -74,10 +72,9 @@ unsigned int ContainerAtom::numberOfChildren( void )
 int ContainerAtom::lengthOfChildren( void )
 {
     int length = 0;
-    std::multimap< std::string, Atom * >::iterator it;
-    for( it = this->_children.begin(); it != this->_children.end(); ++it )
+    for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
     {
-        length += ( ( Atom * )( it->second ) )->getLength();
+        length += ( *it )->getLength();
     }
     return length;
 }
@@ -85,13 +82,12 @@ int ContainerAtom::lengthOfChildren( void )
 std::string ContainerAtom::description( int depth )
 {
     std::string s;
-    std::multimap< std::string, Atom * >::iterator it;
     
     s += std::string(depth, '-') + this->_type + "\n";
     
-    for( it = this->_children.begin(); it != this->_children.end(); ++it )
+    for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
     {
-       s.append( ( ( Atom * )( it->second ) )->description( depth + 1 ) );
+       s.append( ( *it )->description( depth + 1 ) );
     }
     
     return s;
@@ -103,21 +99,19 @@ Atom* ContainerAtom::findChild( const std::string &type )
     {
       return this;
     }
-
-    std::multimap< std::string, Atom * >::iterator it;
-    for ( it = this->_children.begin(); it != this->_children.end(); ++it )
+    
+    for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
     {
-        ContainerAtom *containerAtom = dynamic_cast< ContainerAtom* >( it->second );
+        ContainerAtom *containerAtom = dynamic_cast< ContainerAtom* >( *it );
         if ( containerAtom )
         {
             return containerAtom->findChild( type );
         }
         else
         {
-            Atom *atom = ( Atom* )it->second;
-            if ( atom->getType() == type )
+            if ( ( *it )->getType() == type )
             {
-                return atom;
+                return ( *it );
             }
         }
     }
