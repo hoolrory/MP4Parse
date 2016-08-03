@@ -74,7 +74,7 @@ std::string UnknownAtom::description( int depth )
    
     std::ostringstream o;
    
-    o << std::string(depth, '-') << "unknown (" << this->_type << "\n";
+    o << std::string(depth, '-') << "unknown (" << this->_type << ")\n";
    
     return o.str();
 }
