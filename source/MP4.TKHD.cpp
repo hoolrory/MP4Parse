@@ -43,6 +43,15 @@ std::string TKHD::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << "                      - Creation time:     " << this->_creationTime     << "\n";
+    o << "                      - Modification time: " << this->_modificationTime << "\n";
+    o << "                      - Duration:          " << this->_duration         << "\n";
+    o << "                      - Layer:             " << this->_layer            << "\n";
+    o << "                      - Track ID:          " << this->_trackId          << "\n";
+    o << "                      - Volume:            " << this->_volume           << "\n";
+    o << "                      - Width:             " << this->_width            << "\n";
+    o << "                      - Height:            " << this->_height           << "\n";
+    o << "                      - Alternate Group    " << this->_alternateGroup   << "\n";
     
     return o.str();
 }
