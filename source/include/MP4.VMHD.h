@@ -33,19 +33,20 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.DataAtom.h"
+#include "MP4.FullBox.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class VMHD : DataAtom
+    class VMHD : FullBox
     {
         private:
             
             
         protected:
-            
-            
+            short _graphicsMode;
+            short _opColor[3];
+        
         public:
             
             VMHD( void );

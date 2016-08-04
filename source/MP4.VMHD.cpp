@@ -43,11 +43,19 @@ std::string VMHD::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << "                      - Graphics Mode:     " << this->_graphicsMode << "\n";
+    o << "                      - Opcolor:           " << this->_opColor[0]   << "\n";
+    o << "                      - Opcolor:           " << this->_opColor[1]   << "\n";
+    o << "                      - Opcolor:           " << this->_opColor[2]   << "\n";
     
     return o.str();
 }
 
 void VMHD::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    FullBox::processData(stream, length);
+    _graphicsMode = stream->readBigEndianUnsignedShort();
+    for (int i = 0; i < 3; i++) {
+        _opColor[i] = stream->readBigEndianUnsignedShort();
+    }
 }
