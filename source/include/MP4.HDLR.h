@@ -33,21 +33,23 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.DataAtom.h"
+#include "MP4.FullBox.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class HDLR : DataAtom
+    class HDLR : FullBox
     {
         private:
             
             
         protected:
-            
-            
+        
+        std::string _handlerType;
+        std::string _name;
+        
         public:
-            
+        
             HDLR( void );
             
             std::string description( int depth );

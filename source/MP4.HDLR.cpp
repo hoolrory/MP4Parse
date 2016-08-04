@@ -49,5 +49,26 @@ std::string HDLR::description( int depth )
 
 void HDLR::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    FullBox::processData( stream, length );
+    
+    stream->readBigEndianUnsignedInteger();
+    char handlerType[ 5 ];
+    
+    
+    memset( handlerType, 0, 5 );
+    stream->read( handlerType, 4 );
+    _handlerType.append( handlerType );
+    
+    stream->readBigEndianUnsignedInteger();
+    stream->readBigEndianUnsignedInteger();
+    stream->readBigEndianUnsignedInteger();
+    
+    int remaining = length - 24;
+    char name[ 2 ];
+    while ( remaining > 0 ) {
+        memset( name, 0, 2 );
+        stream->read( name, 1 );
+        _name.append( name );
+        remaining--;
+    }
 }
