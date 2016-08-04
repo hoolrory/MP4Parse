@@ -43,6 +43,9 @@ std::string HDLR::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << "                      - Handler Type:              " << this->_handlerType      << "\n";
+    o << "                      - Human Readable Track Type: " << this->getReadableName() << "\n";
+    o << "                      - Name:                      " << this->_name             << "\n";
     
     return o.str();
 }
@@ -70,5 +73,72 @@ void HDLR::processData( MP4::BinaryStream * stream, size_t length )
         stream->read( name, 1 );
         _name.append( name );
         remaining--;
+    }
+}
+
+std::string HDLR::getReadableName() {
+    if( _handlerType == "odsm" )
+    {
+        return "ObjectDescriptorStream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO";
+    }
+    else if( _handlerType == "crsm" )
+    {
+        return "ClockReferenceStream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO";
+    }
+    else if( _handlerType == "sdsm" )
+    {
+        return "SceneDescriptionStream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO";
+    }
+    else if( _handlerType == "m7sm" )
+    {
+        return "MPEG7Stream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO";
+    }
+    else if( _handlerType == "ocsm" )
+    {
+        return "ObjectContentInfoStream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO";
+    }
+    else if( _handlerType == "ipsm" )
+    {
+        return "IPMP Stream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO";
+    }
+    else if( _handlerType == "mjsm" )
+    {
+        return "MPEG-J Stream - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO";
+    }
+    else if( _handlerType == "mdir" )
+    {
+        return "Apple Meta Data iTunes Reader";
+    }
+    else if( _handlerType == "mp7b" )
+    {
+        return "MPEG-7 binary XML";
+    }
+    else if( _handlerType == "mp7t" )
+    {
+        return "MPEG-7 XML";
+    }
+    else if( _handlerType == "vide" )
+    {
+        return "Video Track";
+    }
+    else if( _handlerType == "soun" )
+    {
+        return "Sound Track";
+    }
+    else if( _handlerType == "hint" )
+    {
+        return "Hint Track";
+    }
+    else if( _handlerType == "appl" )
+    {
+        return "Apple specific";
+    }
+    else if( _handlerType == "meta" )
+    {
+        return "Timed Metadata track - defined in ISO/IEC JTC1/SC29/WG11 - CODING OF MOVING PICTURES AND AUDIO";
+    }
+    else
+    {
+        return "Unknown";
     }
 }
