@@ -33,12 +33,12 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.DataAtom.h"
+#include "MP4.ContainerAtom.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class STSD : DataAtom
+    class STSD : public ContainerAtom
     {
         private:
             
@@ -47,11 +47,14 @@ namespace MP4
             
             
         public:
-            
-            STSD( void );
-            
+        
+        
+            STSD( void ) : ContainerAtom( ( char * )"STSD" )
+            {}
+        
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
+            int getLength( void );
     };
 }
 

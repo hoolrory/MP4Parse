@@ -66,6 +66,8 @@ EXEC                = mp4parse
 #-------------------------------------------------------------------------------
 
 DEPS_mp4parse       = MP4.Atom \
+					  MP4.AVC1 \
+					  MP4.AVCC \
                       MP4.BinaryStream \
                       MP4.ContainerAtom \
                       MP4.DataAtom \
@@ -79,6 +81,7 @@ DEPS_mp4parse       = MP4.Atom \
                       MP4.CTTS \
                       MP4.DREF \
                       MP4.ELST \
+					  MP4.ESDS \
                       MP4.FREE \
                       MP4.FRMA \
                       MP4.FTYP \
@@ -93,6 +96,7 @@ DEPS_mp4parse       = MP4.Atom \
                       MP4.MEHD \
                       MP4.MFHD \
                       MP4.MFRO \
+					  MP4.MP4A \
                       MP4.MVHD \
                       MP4.PADB \
                       MP4.PDIN \
@@ -120,6 +124,7 @@ DEPS_mp4parse       = MP4.Atom \
                       MP4.TREX \
                       MP4.TRUN \
                       MP4.UDTA \
+					  MP4.URL  \
                       MP4.VMHD \
                       MP4.XML
 

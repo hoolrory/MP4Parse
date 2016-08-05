@@ -33,12 +33,12 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.DataAtom.h"
+#include "MP4.ContainerAtom.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class DREF : DataAtom
+    class DREF : public ContainerAtom
     {
         private:
             
@@ -48,10 +48,12 @@ namespace MP4
             
         public:
             
-            DREF( void );
-            
+            DREF( void ) : ContainerAtom( ( char * )"DREF" )
+            {}
+        
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
+            int getLength( void );
     };
 }
 

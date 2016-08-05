@@ -30,24 +30,27 @@
 /* $Id$ */
 
 #include "MP4.STSD.h"
+#include "hex.h"
 
 using namespace MP4;
-          
-STSD::STSD( void )
-{
-    this->_type.append( "STSD" );
-}
 
 std::string STSD::description( int depth )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
+    o << ContainerAtom::description(depth);
+    // o << std::string(depth, '-') << this->_type << "\n";
     
     return o.str();
 }
 
 void STSD::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    FullBox::processData(stream, length);
+    stream->ignore( 4 );
+}
+
+int STSD::getLength()
+{
+    return Atom::getLength();
 }

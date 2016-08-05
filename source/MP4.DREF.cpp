@@ -32,22 +32,23 @@
 #include "MP4.DREF.h"
 
 using namespace MP4;
-          
-DREF::DREF( void )
-{
-    this->_type.append( "DREF" );
-}
 
 std::string DREF::description( int depth )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    
+    //o << std::string(depth, '-') << this->_type << "\n";
+    o << ContainerAtom::description(depth);
     return o.str();
 }
 
 void DREF::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    FullBox::processData(stream, length);
+    stream->ignore( length - 16 );
+}
+
+int DREF::getLength()
+{
+    return Atom::getLength();
 }

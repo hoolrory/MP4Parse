@@ -34,11 +34,11 @@
 #define _MP4_CONTAINER_ATOM_
 
 #include "mp4.h"
-#include "MP4.Atom.h"
+#include "MP4.FullBox.h"
 
 namespace MP4
 {
-    class ContainerAtom : public Atom
+    class ContainerAtom : public FullBox
     {
         private:
             
@@ -59,6 +59,7 @@ namespace MP4
             unsigned int numberOfChildren( void );
             int lengthOfChildren( void );
             std::string description( int depth );
+            void processData( MP4::BinaryStream * stream, size_t length );
     };
 }
 

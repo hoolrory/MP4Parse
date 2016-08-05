@@ -33,12 +33,12 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.DataAtom.h"
+#include "MP4.ContainerAtom.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class UDTA : DataAtom
+    class UDTA : public ContainerAtom
     {
         private:
             
@@ -47,9 +47,10 @@ namespace MP4
             
             
         public:
-            
-            UDTA( void );
-            
+        
+            UDTA( void ) : ContainerAtom( ( char * )"UDTA" )
+            {}
+        
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

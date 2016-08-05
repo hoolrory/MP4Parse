@@ -30,24 +30,21 @@
 /* $Id$ */
 
 #include "MP4.UDTA.h"
+#include "hex.h"
 
 using namespace MP4;
-          
-UDTA::UDTA( void )
-{
-    this->_type.append( "UDTA" );
-}
 
 std::string UDTA::description( int depth )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    
+    // o << std::string(depth, '-') << this->_type << "\n";
+    o << ContainerAtom::description(depth);
     return o.str();
 }
 
 void UDTA::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    (void) stream;
+    (void) length;
 }

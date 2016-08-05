@@ -94,11 +94,12 @@ Parser::Parser( char * filename )
         std::cout << "File size = " << size <<  "\n";
     }
     
-    parentAtom    = this->_file;
+    parentAtom = this->_file;
     
     while( !this->_stream->eof() )
     {
         atom = parseNextAtom();
+        
         while( parentAtom->lengthOfChildren() + atom->getLength() > parentAtom->getLength()) {
             if( parentDepth == 0 ) {
                 break;
@@ -108,8 +109,12 @@ Parser::Parser( char * filename )
             parentDepth--;
             if( _verboseLogging )
             {
-                std::cout << " ---- Resetting parent to " << parentAtom->getType() << " at "<< atom->getType()<<" \n";
+                std::cout << " ---- Resetting parent to " << parentAtom->getType() << " at "<< atom->getType() << "\n";
             }
+        }
+        if( _verboseLogging )
+        {
+            std::cout << "Adding child " << atom->getType() << " to parent " << parentAtom->getType() << "\n";
         }
         parentAtom->addChild(atom);
         
@@ -171,11 +176,47 @@ MP4::Atom* Parser::parseNextAtom()
          || strcmp( type, "stbl" ) == 0
          || strcmp( type, "traf" ) == 0
          || strcmp( type, "trak" ) == 0
+         || strcmp( type, "dref" ) == 0
+         || strcmp( type, "stsd" ) == 0
+         || strcmp( type, "mp4a" ) == 0
+         || strcmp( type, "avc1" ) == 0
+         || strcmp( type, "udta" ) == 0
          )
     {
-        atom = new MP4::ContainerAtom( type );
+        if( strcmp( type, "dref") == 0 )
+        {
+            atom = new MP4::DREF();
+        }
+        else if( strcmp( type, "stsd" ) == 0 )
+        {
+            atom = new MP4::STSD();
+        }
+        else if( strcmp( type, "avc1" ) == 0 )
+        {
+            atom = new MP4::AVC1();
+        }
+        else if ( strcmp( type, "mp4a" ) == 0 )
+        {
+            atom = new MP4::MP4A();
+        }
+        else if ( strcmp( type, "udta" ) == 0 )
+        {
+            atom = new MP4::UDTA();
+        }
+        else if ( strcmp( type, "meta" ) == 0 )
+        {
+            atom = new MP4::UDTA();
+        }
+        else
+        {
+            atom = new MP4::ContainerAtom( type );
+        }
     }
-    else if( strcmp( type, "bxml" ) == 0 )/* Data atoms */
+    else if( strcmp( type, "avcC" ) == 0 )/* Data atoms */
+    {
+        atom = new MP4::AVCC();
+    }
+    else if( strcmp( type, "bxml" ) == 0 )
     {
         atom = ( MP4::Atom * )( new MP4::BXML() );
     }
@@ -191,13 +232,13 @@ MP4::Atom* Parser::parseNextAtom()
     {
         atom = ( MP4::Atom * )( new MP4::CTTS() );
     }
-    else if( strcmp( type, "dref" ) == 0 )
-    {
-        atom = ( MP4::Atom * )( new MP4::DREF() );
-    }
     else if( strcmp( type, "elst" ) == 0 )
     {
         atom = ( MP4::Atom * )( new MP4::ELST() );
+    }
+    else if( strcmp( type, "esds" ) == 0 )
+    {
+        atom = new MP4::ESDS();
     }
     else if( strcmp( type, "free" ) == 0 )
     {
@@ -299,10 +340,6 @@ MP4::Atom* Parser::parseNextAtom()
     {
         atom = ( MP4::Atom * )( new MP4::SUBS() );
     }
-    else if( strcmp( type, "stsd" ) == 0 )
-    {
-        atom = ( MP4::Atom * )( new MP4::STSD() );
-    }
     else if( strcmp( type, "stco" ) == 0 )
     {
         atom = ( MP4::Atom * )( new MP4::STCO() );
@@ -359,10 +396,6 @@ MP4::Atom* Parser::parseNextAtom()
     {
         atom = ( MP4::Atom * )( new MP4::TRUN() );
     }
-    else if( strcmp( type, "udta" ) == 0 )
-    {
-        atom = ( MP4::Atom * )( new MP4::UDTA() );
-    }
     else if( strcmp( type, "vmhd" ) == 0 )
     {
         atom = ( MP4::Atom * )( new MP4::VMHD() );
@@ -370,6 +403,10 @@ MP4::Atom* Parser::parseNextAtom()
     else if( strcmp( type, "xml " ) == 0 )
     {
         atom = ( MP4::Atom * )( new MP4::XML() );
+    }
+    else if( strcmp( type, "url " ) == 0 )
+    {
+        atom = new MP4::URL();
     }
     else
     {
