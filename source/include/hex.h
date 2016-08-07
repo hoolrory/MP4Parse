@@ -51,4 +51,77 @@ inline void readAndRewind(std::string tag, MP4::BinaryStream * stream)
     stream->seekg(pos);
 }
 
+inline std::string string_to_hex(const std::string& input)
+{
+    static const char* const lut = "0123456789ABCDEF";
+    size_t len = input.length();
+    
+    std::string output;
+    output.reserve(2 * len);
+    for (size_t i = 0; i < len; ++i)
+    {
+        const unsigned char c = input[i];
+        output.push_back(lut[c >> 4]);
+        output.push_back(lut[c & 15]);
+    }
+    return output;
+}
+
+inline std::string hex_to_string(const std::string& input)
+{
+    static const char* const lut = "0123456789ABCDEF";
+    size_t len = input.length();
+    if (len & 1) throw std::invalid_argument("odd length");
+    
+    std::string output;
+    output.reserve(len / 2);
+    for (size_t i = 0; i < len; i += 2)
+    {
+        char a = input[i];
+        const char* p = std::lower_bound(lut, lut + 16, a);
+        if (*p != a) throw std::invalid_argument("not a hex digit");
+        
+        char b = input[i + 1];
+        const char* q = std::lower_bound(lut, lut + 16, b);
+        if (*q != b) throw std::invalid_argument("not a hex digit");
+        
+        output.push_back(((p - lut) << 4) | (q - lut));
+    }
+    return output;
+}
+inline int hexCharToInt(char a){
+    if(a>='0' && a<='9')
+        return(a-48);
+    else if(a>='A' && a<='Z')
+        return(a-55);
+    else
+        return(a-87);
+}
+
+inline std::string hexToString(std::string str){
+    std::stringstream HexString;
+    for(int i=0;i<(int)str.length();i++){
+        char a = str.at(i++);
+        char b = str.at(i);
+        int x = hexCharToInt(a);
+        int y = hexCharToInt(b);
+        HexString << (char)((16*x)+y);
+    }
+    return HexString.str();
+}
+
+inline int hex_to_int(char c){
+    int first = c / 16 - 3;
+    int second = c % 16;
+    int result = first*10 + second;
+    if(result > 9) result--;
+    return result;
+}
+
+inline int hex_to_ascii(char c, char d){
+    int high = hex_to_int(c) * 16;
+    int low = hex_to_int(d);
+    return high+low;
+}
+
 #endif /* hex_h */
