@@ -55,11 +55,13 @@
 #include "MP4.HMHD.h"
 #include "MP4.IINF.h"
 #include "MP4.ILOC.h"
+#include "MP4.ILST.h"
 #include "MP4.IMIF.h"
 #include "MP4.IPMC.h"
 #include "MP4.MDAT.h"
 #include "MP4.MDHD.h"
 #include "MP4.MEHD.h"
+#include "MP4.META.h"
 #include "MP4.MFHD.h"
 #include "MP4.MFRO.h"
 #include "MP4.MP4A.h"
@@ -93,5 +95,6 @@
 #include "MP4.URL.h"
 #include "MP4.VMHD.h"
 #include "MP4.XML.h"
+#include "MP4.CTOO.h"
 
 #endif /* _ATOMS_H_ */

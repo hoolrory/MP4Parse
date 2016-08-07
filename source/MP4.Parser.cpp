@@ -140,8 +140,18 @@ MP4::Atom* Parser::parseNextAtom()
     size_t dataLength = 0;
     char type[ 5 ];
     memset( type, 0, 5 );
-    
     this->_stream->read( ( char * )type, 4 );
+    
+    char const hex_chars[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+    
+    std::string typeHex;
+    for( int i = 0; i < 5; ++i )
+    {
+        char const byte = type[i];
+        
+        typeHex += hex_chars[ ( byte & 0xF0 ) >> 4 ];
+        typeHex += hex_chars[ ( byte & 0x0F ) >> 0 ];
+    }
     
     if( length == 1 )
     {
@@ -181,6 +191,7 @@ MP4::Atom* Parser::parseNextAtom()
          || strcmp( type, "mp4a" ) == 0
          || strcmp( type, "avc1" ) == 0
          || strcmp( type, "udta" ) == 0
+         || strcmp( type, "ilst" ) == 0
          )
     {
         if( strcmp( type, "dref") == 0 )
@@ -205,7 +216,11 @@ MP4::Atom* Parser::parseNextAtom()
         }
         else if ( strcmp( type, "meta" ) == 0 )
         {
-            atom = new MP4::UDTA();
+            atom = new MP4::META();
+        }
+        else if ( strcmp( type, "ilst" ) == 0 )
+        {
+            atom = new MP4::ILST();
         }
         else
         {
@@ -407,6 +422,10 @@ MP4::Atom* Parser::parseNextAtom()
     else if( strcmp( type, "url " ) == 0 )
     {
         atom = new MP4::URL();
+    }
+    else if ( typeHex.compare("A9746F6F00") == 0 )
+    {
+        atom = new MP4::CTOO();
     }
     else
     {
