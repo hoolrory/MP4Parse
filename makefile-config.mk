@@ -89,11 +89,13 @@ DEPS_mp4parse       = MP4.Atom \
                       MP4.HMHD \
                       MP4.IINF \
                       MP4.ILOC \
+					  MP4.ILST \
                       MP4.IMIF \
                       MP4.IPMC \
                       MP4.MDAT \
                       MP4.MDHD \
                       MP4.MEHD \
+					  MP4.META \
                       MP4.MFHD \
                       MP4.MFRO \
 					  MP4.MP4A \
@@ -126,7 +128,8 @@ DEPS_mp4parse       = MP4.Atom \
                       MP4.UDTA \
 					  MP4.URL  \
                       MP4.VMHD \
-                      MP4.XML
+                      MP4.XML  \
+					  MP4.CTOO 
 
 #-------------------------------------------------------------------------------
 # Dependancies for the executables (libraries)
