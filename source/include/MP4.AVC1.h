@@ -22,7 +22,17 @@ namespace MP4
         
         
         protected:
+            uint32_t _dataReferenceIndex;
+            uint32_t _predefined[3];
         
+            double _width;
+            double _height;
+        
+            double _horizontalResolution;
+            double _verticalResolution;
+        
+            int _frameCount;
+            double _depth;
         
         public:
         
