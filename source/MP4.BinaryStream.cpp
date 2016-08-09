@@ -150,7 +150,6 @@ uint16_t BinaryStream::readLittleEndianUnsignedShort( void )
     return n;
 }
 
-            
 uint32_t BinaryStream::readUnsignedInteger( void )
 {
     uint32_t n;

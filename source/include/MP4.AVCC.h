@@ -23,6 +23,23 @@ namespace MP4
         
     protected:
         
+        float _configurationVersion;
+        float _avcProfileIndication;
+        float _profileCompatibility;
+        float _avcLevelIndication;
+        
+        int _lengthSizeMinusOne;
+        int _numberOfSequenceParameterSets;
+        int _numberOfPictureParameterSets;
+        
+        int _chromaFormat;
+        
+        int _bitDepthLumaMinus8;
+        int _bitDepthChromaMinus8;
+        
+        std::vector< std::vector< uint8_t > > _sequenceParameterSets;
+        std::vector< std::vector< uint8_t > > _pictureParameterSets;
+        std::vector< std::vector< uint8_t > > _sequenceParameterSetExts;
         
     public:
         
