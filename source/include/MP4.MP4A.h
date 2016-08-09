@@ -22,6 +22,24 @@ namespace MP4
         
         
     protected:
+        int _dataReferenceIndex;
+        int _channelCount;
+        int _sampleSize;
+        long _sampleRate;
+        int _soundVersion;
+        int _compressionId;
+        int _packetSize;
+        long _samplesPerPacket;
+        long _bytesPerPacket;
+        long _bytesPerFrame;
+        long _bytesPerSample;
+        
+        int _reserved1;
+        long _reserved2;
+        
+        std::vector<uint8_t> _soundVersion2Data;
+        
+        //byte[] soundVersion2Data;
         
         
     public:
