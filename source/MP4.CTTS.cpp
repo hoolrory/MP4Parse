@@ -43,11 +43,38 @@ std::string CTTS::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << "                      - Entry Count:    " << this->_entryCount << "\n";
+    o << "Entries:\n";
+    o << "  Count     Offset \n";
+    int count = _entries.size();
+    int omitted = 0;
+    if( count > 20 )
+    {
+        omitted = _entries.size() - 20;
+        count = 20;
+    }
+    for(int i = 0; i < count; i++)
+    {
+        o << "    " << _entries[i].count << "         " << _entries[i].offset << "\n";
+    }
+    if( omitted > 0 )
+    {
+        o << "  " << omitted << " entries omitted\n";
+    }
     
     return o.str();
 }
 
 void CTTS::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    FullBox::processData(stream, length);
+    
+    _entryCount = stream->readBigEndianUnsignedInteger();
+    for( uint32_t i = 0; i < _entryCount; i++ )
+    {
+        Entry entry;
+        entry.count = stream->readBigEndianUnsignedInteger();
+        entry.offset = stream->readBigEndianUnsignedInteger();
+        _entries.push_back(entry);
+    }
 }

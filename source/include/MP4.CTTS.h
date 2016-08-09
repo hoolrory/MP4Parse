@@ -33,19 +33,29 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.DataAtom.h"
+#include "MP4.FullBox.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class CTTS : DataAtom
+    class CTTS : FullBox
     {
+        typedef struct _entry
+        {
+            uint32_t count;
+            uint32_t offset;
+        }
+        Entry;
+        
         private:
-            
-            
+        
+        
         protected:
-            
-            
+        
+            uint32_t _entryCount;
+            std::vector<Entry> _entries;
+        
+        
         public:
             
             CTTS( void );
