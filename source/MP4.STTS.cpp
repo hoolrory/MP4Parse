@@ -43,11 +43,27 @@ std::string STTS::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << "                      - Entry Count:    " << this->_entryCount << "\n";
+    o << "Entries:\n";
+    o << "  Count     Delta \n";
+    for(std::vector<Entry>::iterator it = _entries.begin(); it != _entries.end(); ++it)
+    {
+        o << "    " << ( * it ).count << "         " << ( * it ).delta << "\n";
+    }
     
     return o.str();
 }
 
 void STTS::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    FullBox::processData(stream, length);
+    
+    _entryCount = stream->readBigEndianUnsignedInteger();
+    for( uint32_t i = 0; i < _entryCount; i++ )
+    {
+        Entry entry;
+        entry.count = stream->readBigEndianUnsignedInteger();
+        entry.delta = stream->readBigEndianUnsignedInteger();
+        _entries.push_back(entry);
+    }
 }
