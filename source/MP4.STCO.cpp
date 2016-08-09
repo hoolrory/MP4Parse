@@ -43,6 +43,7 @@ std::string STCO::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << std::string(depth+2, ' ') << this->subtitle() << "\n";
     o << "                      - Chunk Count:      " << this->_chunkCount << "\n";
     o << "                      - Chunk Offsets:    ";
     for( uint32_t i = 0; i < _chunkCount; i++ ) {

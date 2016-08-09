@@ -43,6 +43,7 @@ std::string STSS::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << std::string(depth+2, ' ') << this->subtitle() << "\n";
     o << "                      - Sample Count:    " << this->_sampleCount << "\n";
     o << "                      - Sample Numbers:  ";
     for( uint32_t i = 0; i < _sampleCount; i++ ) {

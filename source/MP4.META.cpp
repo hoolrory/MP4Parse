@@ -16,6 +16,7 @@ std::string META::description( int depth )
     std::ostringstream o;
     
     // o << std::string(depth, '-') << this->_type << "\n";
+    o << std::string(depth+2, ' ') << this->subtitle() << "\n";
     o << ContainerAtom::description(depth);
     return o.str();
 }

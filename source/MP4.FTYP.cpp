@@ -56,6 +56,7 @@ std::string FTYP::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << std::string(depth+2, ' ') << this->subtitle() << "\n";
     o << "                      - Major brand:       " << _majorBrand << "\n";
     o << "                      - Minor version:     " << _minorVersion << "\n";
     o << "                      - Compatible brands: \n";

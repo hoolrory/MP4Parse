@@ -17,6 +17,7 @@ std::string MP4A::description( int depth )
     
     // o << ContainerAtom::description(depth);
     o << std::string(depth, '-') << this->_type << "\n";
+    o << std::string(depth+2, ' ') << this->subtitle() << "\n";
     o << "                      - Data Reference Index:      " << this->_dataReferenceIndex << "\n";
     o << "                      - Bytes Per Frame:           " << this->_bytesPerFrame << "\n";
     o << "                      - Bytes Per Packet:          " << this->_bytesPerPacket << "\n";

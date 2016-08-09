@@ -16,6 +16,7 @@ std::string AVC1::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << std::string(depth+2, ' ') << this->subtitle() << "\n";
     o << "                      - Data Reference Index:     " << this->_dataReferenceIndex << "\n";
     o << "                      - Predefined:               " << this->_predefined[0] << " " << this->_predefined[1] << " " << this->_predefined[2] << "\n";
     o << "                      - Width:                    " << this->_width << "\n";
