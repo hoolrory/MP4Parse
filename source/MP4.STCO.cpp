@@ -43,11 +43,25 @@ std::string STCO::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << "                      - Chunk Count:      " << this->_chunkCount << "\n";
+    o << "                      - Chunk Offsets:    ";
+    for( uint32_t i = 0; i < _chunkCount; i++ ) {
+        o << _chunksOffsets[i];
+        if( i != _chunkCount - 1 )
+        {
+            o << ", ";
+        }
+    }
+    o << "\n";
     
     return o.str();
 }
 
 void STCO::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    FullBox::processData(stream, length);
+    _chunkCount = stream->readBigEndianUnsignedInteger();
+    for( uint32_t i = 0; i < _chunkCount; i++ ) {
+        _chunksOffsets.push_back(stream->readBigEndianUnsignedInteger());
+    }
 }
