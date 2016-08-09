@@ -54,11 +54,12 @@ namespace MP4
             virtual ~Atom( void );
             
             std::string getType( void );
-        
+            
             int getLength( void );
         
             void setLength( int dataLength );
-            
+        
+            std::string subtitle() { return ""; };
             virtual std::string description( int depth ) = 0;
     };
 }

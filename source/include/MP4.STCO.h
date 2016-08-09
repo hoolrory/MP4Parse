@@ -51,7 +51,8 @@ namespace MP4
         public:
             
             STCO( void );
-            
+        
+            std::string subtitle() { return "Chunk Offset Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

@@ -58,7 +58,8 @@ namespace MP4
         public:
             
             MVHD( void );
-            
+        
+            std::string subtitle() { return "Movie Header Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

@@ -51,6 +51,7 @@ namespace MP4
             DREF( void ) : ContainerAtom( ( char * )"DREF" )
             {}
         
+            std::string subtitle() { return "Data Reference Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
             int getLength( void );

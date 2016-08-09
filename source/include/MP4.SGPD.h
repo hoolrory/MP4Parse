@@ -49,7 +49,8 @@ namespace MP4
         public:
             
             SGPD( void );
-            
+        
+            std::string subtitle() { return "Sample Group Definition Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

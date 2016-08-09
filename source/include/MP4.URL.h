@@ -27,6 +27,7 @@ namespace MP4
         
         URL( void );
         
+        std::string subtitle() { return "Data Entry URL Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

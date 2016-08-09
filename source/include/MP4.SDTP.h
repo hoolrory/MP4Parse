@@ -49,7 +49,8 @@ namespace MP4
         public:
             
             SDTP( void );
-            
+        
+            std::string subtitle() { return "Independent and Disposables Samples Boxes"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

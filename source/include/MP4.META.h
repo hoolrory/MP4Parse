@@ -29,6 +29,7 @@ namespace MP4
         META( void ) : ContainerAtom( ( char * )"META" )
         {}
         
+        std::string subtitle() { return "Meta Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

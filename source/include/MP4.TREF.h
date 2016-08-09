@@ -49,7 +49,8 @@ namespace MP4
         public:
             
             TREF( void );
-            
+        
+            std::string subtitle() { return "Track Reference Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

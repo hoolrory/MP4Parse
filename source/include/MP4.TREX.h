@@ -49,7 +49,8 @@ namespace MP4
         public:
             
             TREX( void );
-            
+        
+            std::string subtitle() { return "Track Extends Defaults Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

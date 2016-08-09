@@ -45,6 +45,7 @@ namespace MP4
         
         AVCC( void );
         
+        std::string subtitle() { return "AVC Configuration Box"; };
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

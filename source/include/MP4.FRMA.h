@@ -49,7 +49,8 @@ namespace MP4
         public:
             
             FRMA( void );
-            
+        
+            std::string subtitle() { return "Original Format Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

@@ -49,7 +49,8 @@ namespace MP4
         public:
             
             ILOC( void );
-            
+        
+            std::string subtitle() { return "Item Location Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };
