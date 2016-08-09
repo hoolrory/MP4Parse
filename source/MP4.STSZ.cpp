@@ -43,11 +43,31 @@ std::string STSZ::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << "                      - Sample Count:    " << this->_sampleCount << "\n";
+    o << "                      - Sample Size:     " << this->_sampleSize  << "\n";
+    o << "                      - Sample Sizes:  ";
+    for( uint32_t i = 0; i < _sampleCount; i++ ) {
+        o << _sampleSizes[i];
+        if( i != _sampleCount - 1 )
+        {
+            o << ", ";
+        }
+    }
+    o << "\n";
     
     return o.str();
 }
 
 void STSZ::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    FullBox::processData(stream, length);
+    _sampleSize = stream->readBigEndianUnsignedInteger();
+    _sampleCount = stream->readBigEndianUnsignedInteger();
+    if( _sampleSize == 0 )
+    {
+        for( uint32_t i = 0; i < _sampleCount; i++ ) {
+            _sampleSizes.push_back(stream->readBigEndianUnsignedInteger());
+        }
+    }
 }
+

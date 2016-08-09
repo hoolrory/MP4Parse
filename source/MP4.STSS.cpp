@@ -44,7 +44,7 @@ std::string STSS::description( int depth )
     
     o << std::string(depth, '-') << this->_type << "\n";
     o << "                      - Sample Count:    " << this->_sampleCount << "\n";
-    o << "                      - Samples:         ";
+    o << "                      - Sample Numbers:  ";
     for( uint32_t i = 0; i < _sampleCount; i++ ) {
         o << _samples[i];
         if( i != _sampleCount - 1 )
