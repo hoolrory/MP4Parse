@@ -43,11 +43,25 @@ std::string STSS::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << "                      - Sample Count:    " << this->_sampleCount << "\n";
+    o << "                      - Samples:         ";
+    for( uint32_t i = 0; i < _sampleCount; i++ ) {
+        o << _samples[i];
+        if( i != _sampleCount - 1 )
+        {
+            o << ", ";
+        }
+    }
+    o << "\n";
     
     return o.str();
 }
 
 void STSS::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    FullBox::processData(stream, length);
+    _sampleCount = stream->readBigEndianUnsignedInteger();
+    for( uint32_t i = 0; i < _sampleCount; i++ ) {
+        _samples.push_back(stream->readBigEndianUnsignedInteger());
+    }
 }

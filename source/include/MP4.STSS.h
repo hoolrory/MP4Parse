@@ -33,19 +33,21 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.DataAtom.h"
+#include "MP4.FullBox.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class STSS : DataAtom
+    class STSS : FullBox
     {
         private:
             
             
         protected:
-            
-            
+        
+            uint32_t _sampleCount;
+            std::vector<uint32_t> _samples;
+        
         public:
             
             STSS( void );
