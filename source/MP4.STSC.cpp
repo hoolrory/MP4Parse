@@ -43,11 +43,30 @@ std::string STSC::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
+    o << "                      - Entry Count:    " << this->_entryCount << "\n";
+    o << "Entries:\n";
+    o << "  First Chunk     Sample Description Index      Samples Per Chunk \n";
+    for(std::vector<Entry>::iterator it = _entries.begin(); it != _entries.end(); ++it)
+    {
+        o << "    " << ( * it ).firstChunk << "                       " << ( * it ).sampleDescriptionIndex;
+        o << "                           " << ( * it ).samplesPerChunk << "\n";
+    }
     
     return o.str();
 }
 
 void STSC::processData( MP4::BinaryStream * stream, size_t length )
 {
-    stream->ignore( length );
+    FullBox::processData(stream, length);
+    
+    _entryCount = stream->readBigEndianUnsignedInteger();
+    for( uint32_t i = 0; i < _entryCount; i++ )
+    {
+        Entry entry;
+        entry.firstChunk = stream->readBigEndianUnsignedInteger();
+        entry.sampleDescriptionIndex = stream->readBigEndianUnsignedInteger();
+        entry.samplesPerChunk = stream->readBigEndianUnsignedInteger();
+        _entries.push_back(entry);
+    }
 }
+

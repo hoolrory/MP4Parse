@@ -33,19 +33,29 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.DataAtom.h"
+#include "MP4.FullBox.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class STSC : DataAtom
+    class STSC : FullBox
     {
+        typedef struct _entry
+        {
+            uint32_t firstChunk;
+            uint32_t sampleDescriptionIndex;
+            uint32_t samplesPerChunk;
+        }
+        Entry;
+        
         private:
-            
-            
+        
+        
         protected:
-            
-            
+        
+            uint32_t _entryCount;
+            std::vector<Entry> _entries;
+        
         public:
             
             STSC( void );
