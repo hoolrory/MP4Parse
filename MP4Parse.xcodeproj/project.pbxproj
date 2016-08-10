@@ -75,6 +75,7 @@
 		1F8BF5541D54A265002229BF /* MP4.META.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BF5531D54A265002229BF /* MP4.META.cpp */; };
 		1F8BF5561D54A3AA002229BF /* MP4.ILST.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BF5551D54A3AA002229BF /* MP4.ILST.cpp */; };
 		1F8BF5591D54E629002229BF /* MP4.CTOO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BF5581D54E629002229BF /* MP4.CTOO.cpp */; };
+		1F8BF5831D5B36AA002229BF /* MP4.MOOV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BF5811D5B36AA002229BF /* MP4.MOOV.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -231,6 +232,8 @@
 		1F8BF5571D54A3C5002229BF /* MP4.ILST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MP4.ILST.h; path = source/include/MP4.ILST.h; sourceTree = SOURCE_ROOT; };
 		1F8BF5581D54E629002229BF /* MP4.CTOO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.CTOO.cpp; path = source/MP4.CTOO.cpp; sourceTree = "<group>"; };
 		1F8BF55A1D54E642002229BF /* MP4.CTOO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MP4.CTOO.h; path = source/include/MP4.CTOO.h; sourceTree = SOURCE_ROOT; };
+		1F8BF5811D5B36AA002229BF /* MP4.MOOV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.MOOV.cpp; path = source/MP4.MOOV.cpp; sourceTree = "<group>"; };
+		1F8BF5841D5B36D5002229BF /* MP4.MOOV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MP4.MOOV.h; path = source/include/MP4.MOOV.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +308,7 @@
 				1F8BF5531D54A265002229BF /* MP4.META.cpp */,
 				1F6E3B8D1D451DFA0008CDD5 /* MP4.MFHD.cpp */,
 				1F6E3B8E1D451DFA0008CDD5 /* MP4.MFRO.cpp */,
+				1F8BF5811D5B36AA002229BF /* MP4.MOOV.cpp */,
 				1F8BF5431D53CBEA002229BF /* MP4.MP4A.cpp */,
 				1F6E3B8F1D451DFA0008CDD5 /* MP4.MVHD.cpp */,
 				1F6E3B901D451DFA0008CDD5 /* MP4.PADB.cpp */,
@@ -381,6 +385,7 @@
 				1F8BF5501D54A215002229BF /* MP4.META.h */,
 				1F6E3C041D451E230008CDD5 /* MP4.MFHD.h */,
 				1F6E3C051D451E230008CDD5 /* MP4.MFRO.h */,
+				1F8BF5841D5B36D5002229BF /* MP4.MOOV.h */,
 				1F8BF5451D53CC09002229BF /* MP4.MP4A.h */,
 				1F6E3C061D451E230008CDD5 /* MP4.MVHD.h */,
 				1F6E3C071D451E230008CDD5 /* MP4.PADB.h */,
@@ -488,6 +493,7 @@
 				1F6E3BB41D451DFA0008CDD5 /* MP4.CPRT.cpp in Sources */,
 				1F6E3BD11D451DFA0008CDD5 /* MP4.SDTP.cpp in Sources */,
 				1F6E3BD31D451DFA0008CDD5 /* MP4.SMHD.cpp in Sources */,
+				1F8BF5831D5B36AA002229BF /* MP4.MOOV.cpp in Sources */,
 				1F8BF5441D53CBEA002229BF /* MP4.MP4A.cpp in Sources */,
 				1F6E3A421D45177A0008CDD5 /* MP4Parse.m in Sources */,
 				1F6E3BE71D451DFA0008CDD5 /* MP4.XML.cpp in Sources */,

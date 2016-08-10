@@ -98,6 +98,7 @@ DEPS_mp4parse       = MP4.Atom \
 					  MP4.META \
                       MP4.MFHD \
                       MP4.MFRO \
+					  MP4.MOOV \
 					  MP4.MP4A \
                       MP4.MVHD \
                       MP4.PADB \

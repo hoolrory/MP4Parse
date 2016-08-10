@@ -222,6 +222,10 @@ MP4::Atom* Parser::parseNextAtom()
         {
             atom = new MP4::ILST();
         }
+        else if ( strcmp( type, "moov" ) == 0 )
+        {
+            atom = new MP4::MOOV();
+        }
         else
         {
             atom = new MP4::ContainerAtom( type );

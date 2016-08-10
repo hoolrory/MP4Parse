@@ -64,6 +64,7 @@
 #include "MP4.META.h"
 #include "MP4.MFHD.h"
 #include "MP4.MFRO.h"
+#include "MP4.MOOV.h"
 #include "MP4.MP4A.h"
 #include "MP4.MVHD.h"
 #include "MP4.PADB.h"
