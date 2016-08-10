@@ -81,6 +81,8 @@ namespace MP4
             Parser( char * filename );
             ~Parser( void );
         
+            Atom * getRootAtom( void );
+        
     };
 }
 

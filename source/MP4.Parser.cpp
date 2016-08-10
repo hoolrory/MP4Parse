@@ -447,3 +447,8 @@ Parser::~Parser( void )
     delete this->_stream;
     delete this->_file;
 }
+
+Atom* Parser::getRootAtom( void )
+{
+    return _file;
+}

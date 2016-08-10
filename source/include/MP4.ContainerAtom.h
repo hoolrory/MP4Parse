@@ -60,6 +60,7 @@ namespace MP4
             int lengthOfChildren( void );
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
+            std::vector< Atom * > getChildren( void );
     };
 }
 

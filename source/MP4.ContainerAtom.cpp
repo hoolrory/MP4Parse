@@ -125,3 +125,8 @@ void ContainerAtom::processData( MP4::BinaryStream * stream, size_t length )
     (void) stream;
     (void) length;
 }
+
+std::vector< Atom * > ContainerAtom::getChildren( void )
+{
+    return _children;
+}
