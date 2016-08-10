@@ -40,7 +40,7 @@ std::string File::description( int depth )
     s += "MP4 File:\n";
     for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
     {
-        s.append( ( *it )->description( depth ) );
+        s.append( ( *it )->description( depth + 1 ) );
     }
     
     return s;

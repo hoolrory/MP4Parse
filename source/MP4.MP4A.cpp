@@ -46,7 +46,7 @@ std::string MP4A::description( int depth )
     
     for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
     {
-        o << ( *it )->description( depth );
+        o << ( *it )->description( depth + 1 );
     }
     
     return o.str();

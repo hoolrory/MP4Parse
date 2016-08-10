@@ -130,8 +130,7 @@ Parser::Parser( char * filename )
         }
     }
     
-    int depth = 0;
-    std::cout << this->_file->description( depth );
+    std::cout << this->_file->description( 0 );
 }
 
 MP4::Atom* Parser::parseNextAtom()
