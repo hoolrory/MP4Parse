@@ -89,8 +89,6 @@ void MP4A::processData( MP4::BinaryStream * stream, size_t length )
         skip = 36;
     }
     
-    std::cout << "Sample Rate = " <<_sampleRate << "\n";
-    
     stream->ignore(length - 28 - skip);
 }
 
