@@ -29,7 +29,7 @@ namespace MP4
         DINF( void ) : ContainerAtom( ( char * )"DINF" )
         {}
         
-        std::string subtitle() { return "Data Information Box"; }
+        std::string getName() { return "Data Information Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

@@ -29,7 +29,7 @@ namespace MP4
         TRAF( void ) : ContainerAtom( ( char * )"TRAF" )
         {}
         
-        std::string subtitle() { return "Track Fragment Box"; }
+        std::string getName() { return "Track Fragment Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

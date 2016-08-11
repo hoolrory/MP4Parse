@@ -59,7 +59,7 @@ namespace MP4
             
             STTS( void );
         
-            std::string subtitle() { return "Decoding Time to Sample Box"; }
+            std::string getName() { return "Decoding Time to Sample Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

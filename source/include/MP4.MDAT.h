@@ -50,7 +50,7 @@ namespace MP4
             
             MDAT( void );
         
-            std::string subtitle() { return "Media Data Box"; }
+            std::string getName() { return "Media Data Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

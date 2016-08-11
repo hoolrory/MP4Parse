@@ -15,7 +15,7 @@ std::string MOOV::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->subtitle() << "\n";
+    o << std::string(depth+2, ' ') << this->getName() << "\n";
     
     for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
     {

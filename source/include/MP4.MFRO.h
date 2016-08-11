@@ -50,7 +50,7 @@ namespace MP4
             
             MFRO( void );
         
-            std::string subtitle() { return "Movie Fragment Random Access Offset"; }
+            std::string getName() { return "Movie Fragment Random Access Offset"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

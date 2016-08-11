@@ -29,7 +29,7 @@ namespace MP4
         ILST( void ) : ContainerAtom( ( char * )"ILST" )
         {}
         
-        std::string subtitle() { return "iTunes Meta Data Box"; }
+        std::string getName() { return "iTunes Meta Data Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

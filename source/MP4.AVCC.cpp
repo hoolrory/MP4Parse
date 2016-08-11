@@ -20,7 +20,7 @@ std::string AVCC::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->subtitle() << "\n";
+    o << std::string(depth+2, ' ') << this->getName() << "\n";
     o << "                      - Configuration Version:    " << this->_configurationVersion << "\n";
     o << "                      - AVC Level Indication:     " << this->_avcLevelIndication   << "\n";
     o << "                      - AVC Profile Indication:   " << this->_avcProfileIndication << "\n";

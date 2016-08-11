@@ -50,7 +50,7 @@ namespace MP4
             
             SCHM( void );
         
-            std::string subtitle() { return "Scheme Type Box"; }
+            std::string getName() { return "Scheme Type Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

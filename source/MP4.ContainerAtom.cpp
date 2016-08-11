@@ -84,7 +84,7 @@ std::string ContainerAtom::description( int depth )
     std::string s;
     
     s += std::string(depth, '-') + this->_type + "\n";
-    s += std::string(depth+2, ' ') + this->subtitle() + "\n";
+    s += std::string(depth+2, ' ') + this->getName() + "\n";
     
     for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
     {

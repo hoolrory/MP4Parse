@@ -28,7 +28,7 @@ namespace MP4
         
         ESDS( void );
         
-        std::string subtitle() { return "ES Descriptor Box"; }
+        std::string getName() { return "ES Descriptor Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

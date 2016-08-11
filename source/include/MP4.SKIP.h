@@ -29,7 +29,7 @@ namespace MP4
         SKIP( void ) : ContainerAtom( ( char * )"SKIP" )
         {}
         
-        std::string subtitle() { return "Free Space Box"; }
+        std::string getName() { return "Free Space Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

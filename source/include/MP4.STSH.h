@@ -50,7 +50,7 @@ namespace MP4
             
             STSH( void );
         
-            std::string subtitle() { return "Shadow Sync Sample Table"; }
+            std::string getName() { return "Shadow Sync Sample Table"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

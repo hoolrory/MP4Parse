@@ -48,7 +48,7 @@ namespace MP4
         MP4A( void ) : ContainerAtom( ( char * )"MP4A" )
         {}
         
-        std::string subtitle() { return "Audio Sample Entry Box"; }
+        std::string getName() { return "Audio Sample Entry Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
         int getLength( void );

@@ -56,7 +56,7 @@ namespace MP4
             
             MDHD( void );
         
-            std::string subtitle() { return "Media Header Box"; }
+            std::string getName() { return "Media Header Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

@@ -50,7 +50,7 @@ namespace MP4
             
             FRMA( void );
         
-            std::string subtitle() { return "Original Format Box"; }
+            std::string getName() { return "Original Format Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

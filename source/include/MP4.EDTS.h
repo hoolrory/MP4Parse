@@ -29,7 +29,7 @@ namespace MP4
         EDTS( void ) : ContainerAtom( ( char * )"EDTS" )
         {}
         
-        std::string subtitle() { return "Edit List Box"; }
+        std::string getName() { return "Edit List Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

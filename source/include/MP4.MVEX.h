@@ -29,7 +29,7 @@ namespace MP4
         MVEX( void ) : ContainerAtom( ( char * )"MVEX" )
         {}
         
-        std::string subtitle() { return "Movie Extends Box"; }
+        std::string getName() { return "Movie Extends Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

@@ -29,7 +29,7 @@ namespace MP4
         STBL( void ) : ContainerAtom( ( char * )"STBL" )
         {}
         
-        std::string subtitle() { return "Sample Table Box"; }
+        std::string getName() { return "Sample Table Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

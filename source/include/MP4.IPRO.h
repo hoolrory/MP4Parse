@@ -29,7 +29,7 @@ namespace MP4
         IPRO( void ) : ContainerAtom( ( char * )"IPRO" )
         {}
         
-        std::string subtitle() { return "Item Protection Box"; }
+        std::string getName() { return "Item Protection Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

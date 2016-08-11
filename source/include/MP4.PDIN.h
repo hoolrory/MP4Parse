@@ -50,7 +50,7 @@ namespace MP4
             
             PDIN( void );
         
-            std::string subtitle() { return "Progressive Download Information Box"; }
+            std::string getName() { return "Progressive Download Information Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

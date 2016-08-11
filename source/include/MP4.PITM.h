@@ -50,7 +50,7 @@ namespace MP4
             
             PITM( void );
         
-            std::string subtitle() { return "Primary Item Reference Box"; }
+            std::string getName() { return "Primary Item Reference Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

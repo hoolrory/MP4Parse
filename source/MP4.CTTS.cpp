@@ -43,7 +43,7 @@ std::string CTTS::description( int depth )
     std::ostringstream o;
     
     o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->subtitle() << "\n";
+    o << std::string(depth+2, ' ') << this->getName() << "\n";
     o << "                      - Entry Count:    " << this->_entryCount << "\n";
     o << "Entries:\n";
     o << "  Count     Offset \n";

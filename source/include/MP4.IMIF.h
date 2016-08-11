@@ -50,7 +50,7 @@ namespace MP4
             
             IMIF( void );
         
-            std::string subtitle() { return "IPMP Information Box"; }
+            std::string getName() { return "IPMP Information Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

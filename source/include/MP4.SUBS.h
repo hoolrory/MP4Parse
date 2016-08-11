@@ -50,7 +50,7 @@ namespace MP4
             
             SUBS( void );
         
-            std::string subtitle() { return "Sub-Sample Information Box"; }
+            std::string getName() { return "Sub-Sample Information Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

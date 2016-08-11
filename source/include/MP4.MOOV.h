@@ -30,7 +30,7 @@ namespace MP4
         MOOV( void ) : ContainerAtom( ( char * )"MOOV" )
         {}
         
-        std::string subtitle() { return "Movie Box"; }
+        std::string getName() { return "Movie Box"; }
         std::string description( int depth );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

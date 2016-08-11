@@ -50,7 +50,7 @@ namespace MP4
             
             IINF( void );
         
-            std::string subtitle() { return "Item Information Box"; }
+            std::string getName() { return "Item Information Box"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

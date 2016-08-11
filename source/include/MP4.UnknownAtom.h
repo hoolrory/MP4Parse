@@ -75,7 +75,7 @@ namespace MP4
             UnknownAtom( void );
             UnknownAtom( char * t );
         
-            std::string subtitle() { return "Unknown"; }
+            std::string getName() { return "Unknown"; }
             std::string description( int depth );
             void processData( MP4::BinaryStream * stream, size_t length );
     };
