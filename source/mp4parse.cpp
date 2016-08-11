@@ -42,7 +42,7 @@ int main( int argc, char * argv[] )
     }
     
     parser = new MP4::Parser( argv[ 1 ] );
-    
+    parser->prettyPrint();
     delete parser;
     
     return EXIT_SUCCESS;

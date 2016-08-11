@@ -129,8 +129,6 @@ Parser::Parser( char * filename )
             parentDepth++;
         }
     }
-    
-    std::cout << this->_file->description( 0 );
 }
 
 MP4::Atom* Parser::parseNextAtom()
@@ -476,4 +474,10 @@ Parser::~Parser( void )
 Atom* Parser::getRootAtom( void )
 {
     return _file;
+}
+
+
+void Parser::prettyPrint( void )
+{
+    std::cout << this->_file->description( 0 );
 }

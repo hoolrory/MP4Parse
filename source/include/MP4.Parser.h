@@ -82,6 +82,7 @@ namespace MP4
             ~Parser( void );
         
             Atom * getRootAtom( void );
+            void prettyPrint( void );
         
     };
 }
