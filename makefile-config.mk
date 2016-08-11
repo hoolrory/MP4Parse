@@ -80,6 +80,8 @@ DEPS_mp4parse       = MP4.Atom \
                       MP4.CPRT \
                       MP4.CTTS \
                       MP4.DREF \
+					  MP4.DINF \
+					  MP4.EDTS \
                       MP4.ELST \
 					  MP4.ESDS \
                       MP4.FREE \
@@ -92,14 +94,20 @@ DEPS_mp4parse       = MP4.Atom \
 					  MP4.ILST \
                       MP4.IMIF \
                       MP4.IPMC \
+					  MP4.IPRO \
                       MP4.MDAT \
                       MP4.MDHD \
+					  MP4.MDIA \
                       MP4.MEHD \
 					  MP4.META \
                       MP4.MFHD \
+					  MP4.MFRA \
                       MP4.MFRO \
+					  MP4.MINF \
+					  MP4.MOOF \
 					  MP4.MOOV \
 					  MP4.MP4A \
+					  MP4.MVEX \
                       MP4.MVHD \
                       MP4.PADB \
                       MP4.PDIN \
@@ -109,7 +117,10 @@ DEPS_mp4parse       = MP4.Atom \
                       MP4.SCHM \
                       MP4.SDTP \
                       MP4.SGPD \
+					  MP4.SINF \
+					  MP4.SKIP \
                       MP4.SMHD \
+					  MP4.STBL \
                       MP4.STCO \
                       MP4.STDP \
                       MP4.STSC \
@@ -123,6 +134,8 @@ DEPS_mp4parse       = MP4.Atom \
                       MP4.TFHD \
                       MP4.TFRA \
                       MP4.TKHD \
+					  MP4.TRAF \
+					  MP4.TRAK \
                       MP4.TREF \
                       MP4.TREX \
                       MP4.TRUN \

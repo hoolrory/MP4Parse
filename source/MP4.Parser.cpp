@@ -168,67 +168,89 @@ MP4::Atom* Parser::parseNextAtom()
     MP4::Atom* atom;
     
     /* Container atoms */
-    if
-        (
-         strcmp( type, "dinf" ) == 0
-         || strcmp( type, "edts" ) == 0
-         || strcmp( type, "ipro" ) == 0
-         || strcmp( type, "mdia" ) == 0
-         || strcmp( type, "meta" ) == 0
-         || strcmp( type, "mfra" ) == 0
-         || strcmp( type, "minf" ) == 0
-         || strcmp( type, "moof" ) == 0
-         || strcmp( type, "moov" ) == 0
-         || strcmp( type, "mvex" ) == 0
-         || strcmp( type, "sinf" ) == 0
-         || strcmp( type, "skip" ) == 0
-         || strcmp( type, "stbl" ) == 0
-         || strcmp( type, "traf" ) == 0
-         || strcmp( type, "trak" ) == 0
-         || strcmp( type, "dref" ) == 0
-         || strcmp( type, "stsd" ) == 0
-         || strcmp( type, "mp4a" ) == 0
-         || strcmp( type, "avc1" ) == 0
-         || strcmp( type, "udta" ) == 0
-         || strcmp( type, "ilst" ) == 0
-         )
+    if( strcmp( type, "avc1" ) == 0 )
     {
-        if( strcmp( type, "dref") == 0 )
-        {
-            atom = new MP4::DREF();
-        }
-        else if( strcmp( type, "stsd" ) == 0 )
-        {
-            atom = new MP4::STSD();
-        }
-        else if( strcmp( type, "avc1" ) == 0 )
-        {
-            atom = new MP4::AVC1();
-        }
-        else if ( strcmp( type, "mp4a" ) == 0 )
-        {
-            atom = new MP4::MP4A();
-        }
-        else if ( strcmp( type, "udta" ) == 0 )
-        {
-            atom = new MP4::UDTA();
-        }
-        else if ( strcmp( type, "meta" ) == 0 )
-        {
-            atom = new MP4::META();
-        }
-        else if ( strcmp( type, "ilst" ) == 0 )
-        {
-            atom = new MP4::ILST();
-        }
-        else if ( strcmp( type, "moov" ) == 0 )
-        {
-            atom = new MP4::MOOV();
-        }
-        else
-        {
-            atom = new MP4::ContainerAtom( type );
-        }
+        atom = new MP4::AVC1();
+    }
+    else if( strcmp( type, "dinf") == 0 )
+    {
+        atom = new MP4::DINF();
+    }
+    else if( strcmp( type, "dref") == 0 )
+    {
+        atom = new MP4::DREF();
+    }
+    else if( strcmp( type, "edts") == 0 )
+    {
+        atom = new MP4::EDTS();
+    }
+    else if ( strcmp( type, "ilst" ) == 0 )
+    {
+        atom = new MP4::ILST();
+    }
+    else if( strcmp( type, "ipro") == 0 )
+    {
+        atom = new MP4::IPRO();
+    }
+    else if( strcmp( type, "mdia") == 0 )
+    {
+        atom = new MP4::MDIA();
+    }
+    else if ( strcmp( type, "meta" ) == 0 )
+    {
+        atom = new MP4::META();
+    }
+    else if( strcmp( type, "mfra") == 0 )
+    {
+        atom = new MP4::MFRA();
+    }
+    else if( strcmp( type, "minf") == 0 )
+    {
+        atom = new MP4::MINF();
+    }
+    else if ( strcmp( type, "moof" ) == 0 )
+    {
+        atom = new MP4::MOOF();
+    }
+    else if ( strcmp( type, "moov" ) == 0 )
+    {
+        atom = new MP4::MOOV();
+    }
+    else if ( strcmp( type, "mp4a" ) == 0 )
+    {
+        atom = new MP4::MP4A();
+    }
+    else if ( strcmp( type, "mvex" ) == 0 )
+    {
+        atom = new MP4::MVEX();
+    }
+    else if ( strcmp( type, "sinf" ) == 0 )
+    {
+        atom = new MP4::SINF();
+    }
+    else if ( strcmp( type, "skip" ) == 0 )
+    {
+        atom = new MP4::SKIP();
+    }
+    else if( strcmp( type, "stbl" ) == 0 )
+    {
+        atom = new MP4::STBL();
+    }
+    else if( strcmp( type, "stsd" ) == 0 )
+    {
+        atom = new MP4::STSD();
+    }
+    else if ( strcmp( type, "traf" ) == 0 )
+    {
+        atom = new MP4::TRAF();
+    }
+    else if ( strcmp( type, "trak" ) == 0 )
+    {
+        atom = new MP4::TRAK();
+    }
+    else if ( strcmp( type, "udta" ) == 0 )
+    {
+        atom = new MP4::UDTA();
     }
     else if( strcmp( type, "avcC" ) == 0 )/* Data atoms */
     {
