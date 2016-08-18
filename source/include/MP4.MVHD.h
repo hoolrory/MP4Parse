@@ -60,7 +60,7 @@ namespace MP4
             MVHD( void );
         
             std::string getName() { return "Movie Header Box"; }
-            std::string description( int depth );
+            std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };
 }

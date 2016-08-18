@@ -58,7 +58,7 @@ namespace MP4
             bool hasChildren( void );
             unsigned int numberOfChildren( void );
             int lengthOfChildren( void );
-            std::string description( int depth );
+            std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
             std::vector< Atom * > getChildren( void );
     };

@@ -38,12 +38,12 @@ VMHD::VMHD( void )
     this->_type.append( "VMHD" );
 }
 
-std::string VMHD::description( int depth )
+std::string VMHD::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     o << "                      - Graphics Mode:     " << this->_graphicsMode << "\n";
     o << "                      - Opcolor:           " << this->_opColor[0]   << "\n";
     o << "                      - Opcolor:           " << this->_opColor[1]   << "\n";

@@ -38,12 +38,12 @@ STTS::STTS( void )
     this->_type.append( "STTS" );
 }
 
-std::string STTS::description( int depth )
+std::string STTS::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     o << "                      - Entry Count:    " << this->_entryCount << "\n";
     o << "Entries:\n";
     o << "  Count     Delta \n";

@@ -38,12 +38,12 @@ SGPD::SGPD( void )
     this->_type.append( "SGPD" );
 }
 
-std::string SGPD::description( int depth )
+std::string SGPD::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

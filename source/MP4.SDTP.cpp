@@ -38,12 +38,12 @@ SDTP::SDTP( void )
     this->_type.append( "SDTP" );
 }
 
-std::string SDTP::description( int depth )
+std::string SDTP::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

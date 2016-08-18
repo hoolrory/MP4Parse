@@ -31,7 +31,7 @@ namespace MP4
         {}
         
         std::string getName() { return "Movie Box"; }
-        std::string description( int depth );
+        std::string getContent( void );
         void processData( MP4::BinaryStream * stream, size_t length );
     };
 }

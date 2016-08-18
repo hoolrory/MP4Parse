@@ -16,11 +16,9 @@ CTOO::CTOO( void )
     this->_type.append( "©TOO" );
 }
 
-std::string CTOO::description( int depth )
+std::string CTOO::getContent( void )
 {
     std::ostringstream o;
-    
-    o << std::string(depth, '-') << this->_type << " \n";
     
     return o.str();
 }

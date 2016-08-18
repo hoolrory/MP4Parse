@@ -69,12 +69,10 @@ UnknownAtom::UnknownAtom( char * t )
     std::transform( this->_type.begin(), this->_type.end(), this->_type.begin(), ::toupper );
 }
 
-std::string UnknownAtom::description( int depth )
+std::string UnknownAtom::getContent( void )
 {
    
     std::ostringstream o;
-   
-    o << std::string(depth, '-') << "unknown (" << this->_type << ")\n";
    
     return o.str();
 }

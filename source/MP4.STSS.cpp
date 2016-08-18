@@ -38,12 +38,12 @@ STSS::STSS( void )
     this->_type.append( "STSS" );
 }
 
-std::string STSS::description( int depth )
+std::string STSS::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     o << "                      - Sample Count:    " << this->_sampleCount << "\n";
     o << "                      - Sample Numbers:  ";
     for( uint32_t i = 0; i < _sampleCount; i++ ) {

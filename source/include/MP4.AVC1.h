@@ -40,7 +40,7 @@ namespace MP4
             {}
         
             std::string getName() { return "H.264 Description Box"; };
-            std::string description( int depth );
+            std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
             int getLength( void );
         

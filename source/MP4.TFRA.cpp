@@ -38,12 +38,12 @@ TFRA::TFRA( void )
     this->_type.append( "TFRA" );
 }
 
-std::string TFRA::description( int depth )
+std::string TFRA::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

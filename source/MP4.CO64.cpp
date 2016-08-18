@@ -38,12 +38,12 @@ CO64::CO64( void )
     this->_type.append( "CO64" );
 }
 
-std::string CO64::description( int depth )
+std::string CO64::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

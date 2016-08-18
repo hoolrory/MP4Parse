@@ -15,12 +15,12 @@ AVCC::AVCC( void )
     this->_type.append( "AVCC" );
 }
 
-std::string AVCC::description( int depth )
+std::string AVCC::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     o << "                      - Configuration Version:    " << this->_configurationVersion << "\n";
     o << "                      - AVC Level Indication:     " << this->_avcLevelIndication   << "\n";
     o << "                      - AVC Profile Indication:   " << this->_avcProfileIndication << "\n";

@@ -15,12 +15,12 @@ URL::URL( void )
     this->_type.append( "URL " );
 }
 
-std::string URL::description( int depth )
+std::string URL::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

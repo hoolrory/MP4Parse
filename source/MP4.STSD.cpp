@@ -34,13 +34,13 @@
 
 using namespace MP4;
 
-std::string STSD::description( int depth )
+std::string STSD::getContent( void )
 {
     std::ostringstream o;
     
-    o << ContainerAtom::description(depth);
-    // o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    o << ContainerAtom::getContent();
+    // 
+    
     
     return o.str();
 }

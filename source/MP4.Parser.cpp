@@ -479,5 +479,5 @@ Atom* Parser::getRootAtom( void )
 
 void Parser::prettyPrint( void )
 {
-    std::cout << this->_file->description( 0 );
+    std::cout << this->_file->getContent();
 }

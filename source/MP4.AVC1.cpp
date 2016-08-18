@@ -11,12 +11,10 @@
 
 using namespace MP4;
 
-std::string AVC1::description( int depth )
+std::string AVC1::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
     o << "                      - Data Reference Index:     " << this->_dataReferenceIndex << "\n";
     o << "                      - Predefined:               " << this->_predefined[0] << " " << this->_predefined[1] << " " << this->_predefined[2] << "\n";
     o << "                      - Width:                    " << this->_width << "\n";
@@ -25,11 +23,6 @@ std::string AVC1::description( int depth )
     o << "                      - Vertical Resolution:      " << this->_verticalResolution << "\n";
     o << "                      - Frame Count:              " << this->_frameCount << "\n";
     o << "                      - Depth:                    " << this->_depth << "\n";
-    
-    for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
-    {
-        o << ( *it )->description( depth + 1 );
-    }
     
     return o.str();
 }

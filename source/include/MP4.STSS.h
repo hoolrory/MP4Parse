@@ -53,7 +53,7 @@ namespace MP4
             STSS( void );
         
             std::string getName() { return "Sync Sample Box"; }
-            std::string description( int depth );
+            std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };
 }

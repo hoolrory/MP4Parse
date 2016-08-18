@@ -38,12 +38,12 @@ HDLR::HDLR( void )
     this->_type.append( "HDLR" );
 }
 
-std::string HDLR::description( int depth )
+std::string HDLR::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     o << "                      - Handler Type:              " << this->_handlerType      << "\n";
     o << "                      - Human Readable Track Type: " << this->getReadableName() << "\n";
     o << "                      - Name:                      " << this->_name             << "\n";

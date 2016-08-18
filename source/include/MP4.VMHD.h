@@ -52,7 +52,7 @@ namespace MP4
             VMHD( void );
         
             std::string getName() { return "Video Media Header Box"; }
-            std::string description( int depth );
+            std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };
 }

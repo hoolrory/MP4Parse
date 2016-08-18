@@ -61,7 +61,7 @@ namespace MP4
             STSC( void );
         
             std::string getName() { return "Sample to Chunk Box"; }
-            std::string description( int depth );
+            std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };
 }

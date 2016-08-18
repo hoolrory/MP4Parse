@@ -11,13 +11,12 @@
 
 using namespace MP4;
 
-std::string MP4A::description( int depth )
+std::string MP4A::getContent( void )
 {
     std::ostringstream o;
     
-    // o << ContainerAtom::description(depth);
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    // o << ContainerAtom::getContent();
+    
     o << "                      - Data Reference Index:      " << this->_dataReferenceIndex << "\n";
     o << "                      - Bytes Per Frame:           " << this->_bytesPerFrame << "\n";
     o << "                      - Bytes Per Packet:          " << this->_bytesPerPacket << "\n";
@@ -43,11 +42,6 @@ std::string MP4A::description( int depth )
         soundVersionDataHex += ", ";
     }
     o << "                      - Sound Version 2 Data:      " << soundVersionDataHex << "\n";
-    
-    for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
-    {
-        o << ( *it )->description( depth + 1 );
-    }
     
     return o.str();
 }

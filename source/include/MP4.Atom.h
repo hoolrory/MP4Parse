@@ -60,7 +60,7 @@ namespace MP4
             void setLength( int dataLength );
         
             virtual std::string getName() { return ""; };
-            virtual std::string description( int depth ) = 0;
+            virtual std::string getContent( void ) = 0;
     };
 }
 

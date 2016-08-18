@@ -38,12 +38,12 @@ STSZ::STSZ( void )
     this->_type.append( "STSZ" );
 }
 
-std::string STSZ::description( int depth )
+std::string STSZ::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     o << "                      - Sample Count:    " << this->_sampleCount << "\n";
     o << "                      - Sample Size:     " << this->_sampleSize  << "\n";
     o << "                      - Sample Sizes:  ";

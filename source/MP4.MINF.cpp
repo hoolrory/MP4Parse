@@ -11,10 +11,10 @@
 
 using namespace MP4;
 
-std::string MINF::description( int depth )
+std::string MINF::getContent( void )
 {
     std::ostringstream o;
-    o << ContainerAtom::description(depth);
+    o << ContainerAtom::getContent();
     return o.str();
 }
 

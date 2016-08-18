@@ -38,12 +38,12 @@ STZ2::STZ2( void )
     this->_type.append( "STZ2" );
 }
 
-std::string STZ2::description( int depth )
+std::string STZ2::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

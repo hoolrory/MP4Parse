@@ -38,12 +38,12 @@ STDP::STDP( void )
     this->_type.append( "STDP" );
 }
 
-std::string STDP::description( int depth )
+std::string STDP::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

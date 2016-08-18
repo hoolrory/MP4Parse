@@ -11,10 +11,10 @@
 
 using namespace MP4;
 
-std::string SKIP::description( int depth )
+std::string SKIP::getContent( void )
 {
     std::ostringstream o;
-    o << ContainerAtom::description(depth);
+    o << ContainerAtom::getContent();
     return o.str();
 }
 

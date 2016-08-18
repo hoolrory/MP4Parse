@@ -38,12 +38,12 @@ HMHD::HMHD( void )
     this->_type.append( "HMDH" );
 }
 
-std::string HMHD::description( int depth )
+std::string HMHD::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

@@ -10,17 +10,10 @@
 
 using namespace MP4;
 
-std::string MOOV::description( int depth )
+std::string MOOV::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
-    
-    for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
-    {
-        o << ( *it )->description( depth + 1 );
-    }
     
     return o.str();
 }

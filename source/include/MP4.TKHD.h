@@ -61,7 +61,7 @@ namespace MP4
             TKHD( void );
         
             std::string getName() { return "Track Header Box"; }
-            std::string description( int depth );
+            std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };
 }

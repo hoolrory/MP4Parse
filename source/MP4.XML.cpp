@@ -38,11 +38,9 @@ XML::XML( void )
     this->_type.append( "XML" );
 }
 
-std::string XML::description( int depth )
+std::string XML::getContent( void )
 {
     std::ostringstream o;
-    
-    o << std::string(depth, '-') << this->_type << " \n";
     
     return o.str();
 }

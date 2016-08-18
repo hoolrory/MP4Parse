@@ -38,12 +38,12 @@ ILOC::ILOC( void )
     this->_type.append( "ILOC" );
 }
 
-std::string ILOC::description( int depth )
+std::string ILOC::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

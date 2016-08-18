@@ -38,12 +38,12 @@ FREE::FREE( void )
     this->_type.append( "FREE" );
 }
 
-std::string FREE::description( int depth )
+std::string FREE::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

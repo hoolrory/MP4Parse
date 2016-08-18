@@ -48,15 +48,15 @@ FTYP::~FTYP( void )
     }
 }
 
-std::string FTYP::description( int depth )
+std::string FTYP::getContent( void )
 {
     std::string s;
     std::string * brand;
     std::vector< std::string * >::iterator it;
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     o << "                      - Major brand:       " << _majorBrand << "\n";
     o << "                      - Minor version:     " << _minorVersion << "\n";
     o << "                      - Compatible brands: \n";

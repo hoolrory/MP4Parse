@@ -38,12 +38,12 @@ FRMA::FRMA( void )
     this->_type.append( "FRMA" );
 }
 
-std::string FRMA::description( int depth )
+std::string FRMA::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

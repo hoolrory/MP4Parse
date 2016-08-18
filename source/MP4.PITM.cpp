@@ -38,12 +38,12 @@ PITM::PITM( void )
     this->_type.append( "PITM" );
 }
 
-std::string PITM::description( int depth )
+std::string PITM::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }

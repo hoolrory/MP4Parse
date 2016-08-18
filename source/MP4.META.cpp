@@ -11,13 +11,11 @@
 
 using namespace MP4;
 
-std::string META::description( int depth )
+std::string META::getContent( void )
 {
     std::ostringstream o;
     
-    // o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
-    o << ContainerAtom::description(depth);
+    o << ContainerAtom::getContent();
     return o.str();
 }
 

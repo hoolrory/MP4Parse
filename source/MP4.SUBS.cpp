@@ -38,12 +38,12 @@ SUBS::SUBS( void )
     this->_type.append( "SUBS" );
 }
 
-std::string SUBS::description( int depth )
+std::string SUBS::getContent( void )
 {
     std::ostringstream o;
     
-    o << std::string(depth, '-') << this->_type << "\n";
-    o << std::string(depth+2, ' ') << this->getName() << "\n";
+    
+    
     
     return o.str();
 }
