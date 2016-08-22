@@ -42,11 +42,9 @@ std::string STSZ::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    o << "                      - Sample Count:    " << this->_sampleCount << "\n";
-    o << "                      - Sample Size:     " << this->_sampleSize  << "\n";
-    o << "                      - Sample Sizes:  ";
+    o << "Sample Count:    " << this->_sampleCount << "\n";
+    o << "Sample Size:     " << this->_sampleSize  << "\n";
+    o << "Sample Sizes:  ";
     for( uint32_t i = 0; i < _sampleCount; i++ ) {
         o << _sampleSizes[i];
         if( i != _sampleCount - 1 )

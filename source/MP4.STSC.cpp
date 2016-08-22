@@ -42,9 +42,7 @@ std::string STSC::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    o << "                      - Entry Count:    " << this->_entryCount << "\n";
+    o << "Entry Count:    " << this->_entryCount << "\n";
     o << "Entries:\n";
     o << "  First Chunk     Sample Description Index      Samples Per Chunk \n";
     for(std::vector<Entry>::iterator it = _entries.begin(); it != _entries.end(); ++it)

@@ -42,9 +42,6 @@ std::string SMHD::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    
     return o.str();
 }
 

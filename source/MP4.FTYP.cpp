@@ -57,9 +57,9 @@ std::string FTYP::getContent( void )
     
     
     
-    o << "                      - Major brand:       " << _majorBrand << "\n";
-    o << "                      - Minor version:     " << _minorVersion << "\n";
-    o << "                      - Compatible brands: \n";
+    o << "Major brand:       " << _majorBrand << "\n";
+    o << "Minor version:     " << _minorVersion << "\n";
+    o << "Compatible brands:\n";
     
     s = o.str();
     
@@ -67,7 +67,7 @@ std::string FTYP::getContent( void )
     {
         brand = *( it );
         
-        o << "                          - " << *( brand ) << "\n";
+        o << "    " << *( brand ) << "\n";
     }
     
     return o.str();

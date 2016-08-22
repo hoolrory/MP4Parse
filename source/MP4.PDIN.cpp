@@ -42,9 +42,6 @@ std::string PDIN::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    
     return o.str();
 }
 

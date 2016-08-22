@@ -42,9 +42,6 @@ std::string TFRA::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    
     return o.str();
 }
 

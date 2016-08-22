@@ -15,7 +15,6 @@ std::string META::getContent( void )
 {
     std::ostringstream o;
     
-    o << ContainerAtom::getContent();
     return o.str();
 }
 

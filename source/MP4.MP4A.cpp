@@ -15,21 +15,19 @@ std::string MP4A::getContent( void )
 {
     std::ostringstream o;
     
-    // o << ContainerAtom::getContent();
-    
-    o << "                      - Data Reference Index:      " << this->_dataReferenceIndex << "\n";
-    o << "                      - Bytes Per Frame:           " << this->_bytesPerFrame << "\n";
-    o << "                      - Bytes Per Packet:          " << this->_bytesPerPacket << "\n";
-    o << "                      - Bytes Per Sample:          " << this->_bytesPerSample << "\n";
-    o << "                      - Channel Count:             " << this->_channelCount << "\n";
-    o << "                      - Compression Id:            " << this->_compressionId << "\n";
-    o << "                      - Packet Size:               " << this->_packetSize << "\n";
-    o << "                      - Reserved 1:                " << this->_reserved1 << "\n";
-    o << "                      - Reserved 2:                " << this->_reserved2 << "\n";
-    o << "                      - Sample Rate:               " << this->_sampleRate << "\n";
-    o << "                      - Sample Size:               " << this->_sampleSize << "\n";
-    o << "                      - Samples Per Packet:        " << this->_samplesPerPacket << "\n";
-    o << "                      - Sound Version:             " << this->_soundVersion << "\n";
+    o << "Data Reference Index:      " << this->_dataReferenceIndex << "\n";
+    o << "Bytes Per Frame:           " << this->_bytesPerFrame << "\n";
+    o << "Bytes Per Packet:          " << this->_bytesPerPacket << "\n";
+    o << "Bytes Per Sample:          " << this->_bytesPerSample << "\n";
+    o << "Channel Count:             " << this->_channelCount << "\n";
+    o << "Compression Id:            " << this->_compressionId << "\n";
+    o << "Packet Size:               " << this->_packetSize << "\n";
+    o << "Reserved 1:                " << this->_reserved1 << "\n";
+    o << "Reserved 2:                " << this->_reserved2 << "\n";
+    o << "Sample Rate:               " << this->_sampleRate << "\n";
+    o << "Sample Size:               " << this->_sampleSize << "\n";
+    o << "Samples Per Packet:        " << this->_samplesPerPacket << "\n";
+    o << "Sound Version:             " << this->_soundVersion << "\n";
     
     char const hex_chars[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
     
@@ -41,7 +39,7 @@ std::string MP4A::getContent( void )
         soundVersionDataHex += hex_chars[ ( (* it) & 0x0F ) >> 0 ];
         soundVersionDataHex += ", ";
     }
-    o << "                      - Sound Version 2 Data:      " << soundVersionDataHex << "\n";
+    o << "Sound Version 2 Data:      " << soundVersionDataHex << "\n";
     
     return o.str();
 }

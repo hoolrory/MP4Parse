@@ -14,7 +14,6 @@ std::string MOOV::getContent( void )
 {
     std::ostringstream o;
     
-    
     return o.str();
 }
 

@@ -14,7 +14,7 @@ using namespace MP4;
 std::string ILST::getContent( void )
 {
     std::ostringstream o;
-    o << ContainerAtom::getContent();
+    
     return o.str();
 }
 

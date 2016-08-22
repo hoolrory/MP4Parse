@@ -42,9 +42,6 @@ std::string STZ2::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    
     return o.str();
 }
 

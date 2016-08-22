@@ -42,13 +42,11 @@ std::string MDHD::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    o << "                      - Creation time:     " << this->_creationTime     << "\n";
-    o << "                      - Modification time: " << this->_modificationTime << "\n";
-    o << "                      - Time scale:        " << this->_timeScale        << "\n";
-    o << "                      - Duration:          " << this->_duration         << "\n";
-    o << "                      - Language:          " << *( this->_language )    << "\n";
+    o << "Creation time:     " << this->_creationTime     << "\n";
+    o << "Modification time: " << this->_modificationTime << "\n";
+    o << "Time scale:        " << this->_timeScale        << "\n";
+    o << "Duration:          " << this->_duration         << "\n";
+    o << "Language:          " << *( this->_language )    << "\n";
     
     return o.str();
 }

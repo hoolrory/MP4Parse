@@ -21,14 +21,14 @@ std::string AVCC::getContent( void )
     
     
     
-    o << "                      - Configuration Version:    " << this->_configurationVersion << "\n";
-    o << "                      - AVC Level Indication:     " << this->_avcLevelIndication   << "\n";
-    o << "                      - AVC Profile Indication:   " << this->_avcProfileIndication << "\n";
-    o << "                      - Profile Compatibility:    " << this->_profileCompatibility << "\n";
-    o << "                      - Bit Depth Chroma Minus 8: " << this->_bitDepthChromaMinus8 << "\n";
-    o << "                      - Bit Depth Luma Minus 8:   " << this->_bitDepthLumaMinus8   << "\n";
-    o << "                      - Chroma Format:            " << this->_chromaFormat         << "\n";
-    o << "                      - Length Size Minus One:    " << this->_lengthSizeMinusOne   << "\n";
+    o << "Configuration Version:    " << this->_configurationVersion << "\n";
+    o << "AVC Level Indication:     " << this->_avcLevelIndication   << "\n";
+    o << "AVC Profile Indication:   " << this->_avcProfileIndication << "\n";
+    o << "Profile Compatibility:    " << this->_profileCompatibility << "\n";
+    o << "Bit Depth Chroma Minus 8: " << this->_bitDepthChromaMinus8 << "\n";
+    o << "Bit Depth Luma Minus 8:   " << this->_bitDepthLumaMinus8   << "\n";
+    o << "Chroma Format:            " << this->_chromaFormat         << "\n";
+    o << "Length Size Minus One:    " << this->_lengthSizeMinusOne   << "\n";
     
     char const hex_chars[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
     
@@ -45,7 +45,7 @@ std::string AVCC::getContent( void )
     }
     pps = pps.substr(0, pps.size()-2);
     
-    o << "                      - Picture Parameter Sets:   " << pps << "\n";
+    o << "Picture Parameter Sets:   " << pps << "\n";
     
     std::string sps;
     for( std::vector<std::vector<uint8_t> >::iterator it = _sequenceParameterSets.begin(); it != _sequenceParameterSets.end(); ++it )
@@ -59,7 +59,7 @@ std::string AVCC::getContent( void )
         }
     }
     sps = sps.substr(0, sps.size()-2);
-    o << "                      - Sequence Parameter Sets:  " << sps   << "\n";
+    o << "Sequence Parameter Sets:  " << sps   << "\n";
     
     return o.str();
 }

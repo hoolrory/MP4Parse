@@ -15,14 +15,14 @@ std::string AVC1::getContent( void )
 {
     std::ostringstream o;
     
-    o << "                      - Data Reference Index:     " << this->_dataReferenceIndex << "\n";
-    o << "                      - Predefined:               " << this->_predefined[0] << " " << this->_predefined[1] << " " << this->_predefined[2] << "\n";
-    o << "                      - Width:                    " << this->_width << "\n";
-    o << "                      - Height:                   " << this->_height << "\n";
-    o << "                      - Horizontal Resolution:    " << this->_horizontalResolution << "\n";
-    o << "                      - Vertical Resolution:      " << this->_verticalResolution << "\n";
-    o << "                      - Frame Count:              " << this->_frameCount << "\n";
-    o << "                      - Depth:                    " << this->_depth << "\n";
+    o << "Data Reference Index:  " << this->_dataReferenceIndex << "\n";
+    o << "Predefined:            " << this->_predefined[0] << " " << this->_predefined[1] << " " << this->_predefined[2] << "\n";
+    o << "Width:                 " << this->_width << "\n";
+    o << "Height:                " << this->_height << "\n";
+    o << "Horizontal Resolution: " << this->_horizontalResolution << "\n";
+    o << "Vertical Resolution:   " << this->_verticalResolution << "\n";
+    o << "Frame Count:           " << this->_frameCount << "\n";
+    o << "Depth:                 " << this->_depth << "\n";
     
     return o.str();
 }

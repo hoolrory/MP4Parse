@@ -42,9 +42,6 @@ std::string MEHD::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    
     return o.str();
 }
 

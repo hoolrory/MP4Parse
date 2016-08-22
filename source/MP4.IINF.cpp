@@ -42,9 +42,6 @@ std::string IINF::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    
     return o.str();
 }
 

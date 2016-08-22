@@ -42,9 +42,6 @@ std::string HMHD::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    
     return o.str();
 }
 

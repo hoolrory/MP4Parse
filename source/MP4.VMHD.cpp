@@ -42,12 +42,10 @@ std::string VMHD::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    o << "                      - Graphics Mode:     " << this->_graphicsMode << "\n";
-    o << "                      - Opcolor:           " << this->_opColor[0]   << "\n";
-    o << "                      - Opcolor:           " << this->_opColor[1]   << "\n";
-    o << "                      - Opcolor:           " << this->_opColor[2]   << "\n";
+    o << "Graphics Mode:     " << this->_graphicsMode << "\n";
+    o << "Opcolor:           " << this->_opColor[0]   << "\n";
+    o << "Opcolor:           " << this->_opColor[1]   << "\n";
+    o << "Opcolor:           " << this->_opColor[2]   << "\n";
     
     return o.str();
 }

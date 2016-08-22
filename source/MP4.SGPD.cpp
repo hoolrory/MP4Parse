@@ -42,9 +42,6 @@ std::string SGPD::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    
     return o.str();
 }
 

@@ -44,7 +44,7 @@ std::string CTTS::getContent( void )
     
     
     
-    o << "                      - Entry Count:    " << this->_entryCount << "\n";
+    o << "Entry Count: " << this->_entryCount << "\n";
     o << "Entries:\n";
     o << "  Count     Offset \n";
     int count = _entries.size();

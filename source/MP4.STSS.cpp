@@ -42,10 +42,8 @@ std::string STSS::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    o << "                      - Sample Count:    " << this->_sampleCount << "\n";
-    o << "                      - Sample Numbers:  ";
+    o << "Sample Count:    " << this->_sampleCount << "\n";
+    o << "Sample Numbers:  ";
     for( uint32_t i = 0; i < _sampleCount; i++ ) {
         o << _samples[i];
         if( i != _sampleCount - 1 )

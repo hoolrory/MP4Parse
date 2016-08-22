@@ -42,9 +42,6 @@ std::string CO64::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
-    
     return o.str();
 }
 

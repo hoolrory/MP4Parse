@@ -37,7 +37,5 @@ std::string File::getContent( void )
 {
     std::string s;
     
-    s += "MP4 File:\n";
-    
     return s;
 }

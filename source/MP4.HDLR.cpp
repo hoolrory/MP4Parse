@@ -44,9 +44,9 @@ std::string HDLR::getContent( void )
     
     
     
-    o << "                      - Handler Type:              " << this->_handlerType      << "\n";
-    o << "                      - Human Readable Track Type: " << this->getReadableName() << "\n";
-    o << "                      - Name:                      " << this->_name             << "\n";
+    o << "Handler Type:              " << this->_handlerType      << "\n";
+    o << "Human Readable Track Type: " << this->getReadableName() << "\n";
+    o << "Name:                      " << this->_name             << "\n";
     
     return o.str();
 }
