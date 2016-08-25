@@ -100,6 +100,10 @@ Parser::Parser( char * filename )
     {
         atom = parseNextAtom();
         
+        if ( atom == nullptr ) {
+            break;
+        }
+        
         while( parentAtom->lengthOfChildren() + atom->getLength() > parentAtom->getLength()) {
             if( parentDepth == 0 ) {
                 break;
@@ -134,6 +138,10 @@ Parser::Parser( char * filename )
 MP4::Atom* Parser::parseNextAtom()
 {
     size_t length     = this->_stream->readBigEndianUnsignedInteger();
+    if ( this->_stream->eof() ) {
+        return nullptr;
+    }
+    
     size_t dataLength = 0;
     char type[ 5 ];
     memset( type, 0, 5 );
