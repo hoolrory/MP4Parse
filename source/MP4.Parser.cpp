@@ -33,6 +33,7 @@
 #include "atoms.h"
 #include <stack>
 #include <stdio.h>
+#include "hex.h"
 
 using namespace MP4;
 
@@ -493,4 +494,33 @@ Atom* Parser::getRootAtom( void )
 void Parser::prettyPrint( void )
 {
     std::cout << this->_file->getContent();
+}
+
+
+std::string Parser::getBytes( Atom * atom )
+{
+    this->_stream->clear();
+    this->_stream->seekg(atom->getStartStreamPos());
+    
+    std::ostringstream o1;
+    std::ostringstream o2;
+    
+    std::cout << atom->getType() << " start = " << atom->getStartStreamPos() << " end = " << atom->getEndStreamPos() << "\n";
+    
+    while( this->_stream->tellg() != atom->getEndStreamPos() ) {
+        char s[1];
+        memset(s, 0, 1);
+        this->_stream->read((char *)s, 1);
+        
+        std::cout << "stream at " << this->_stream->tellg() << " = " << s[0] << "\n";
+        if ( s[0] == '\0' ) {
+            o1 << '.';
+        } else {
+            o1 << s[0];
+        }
+        o2 << hex(s[0]) << " ";
+    }
+    std::cout << o1.str() << "\n\n" << o2.str();
+    return o1.str() + "\n\n" + o2.str();
+    
 }
