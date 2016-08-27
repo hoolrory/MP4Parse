@@ -505,14 +505,11 @@ std::string Parser::getBytes( Atom * atom )
     std::ostringstream o1;
     std::ostringstream o2;
     
-    std::cout << atom->getType() << " start = " << atom->getStartStreamPos() << " end = " << atom->getEndStreamPos() << "\n";
-    
     while( this->_stream->tellg() != atom->getEndStreamPos() ) {
         char s[1];
         memset(s, 0, 1);
         this->_stream->read((char *)s, 1);
         
-        std::cout << "stream at " << this->_stream->tellg() << " = " << s[0] << "\n";
         if ( s[0] == '\0' ) {
             o1 << '.';
         } else {
@@ -520,7 +517,6 @@ std::string Parser::getBytes( Atom * atom )
         }
         o2 << hex(s[0]) << " ";
     }
-    std::cout << o1.str() << "\n\n" << o2.str();
     return o1.str() + "\n\n" + o2.str();
     
 }
