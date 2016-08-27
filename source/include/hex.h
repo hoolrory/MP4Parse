@@ -20,7 +20,11 @@ struct HexCharStruct
 
 inline std::ostream& operator<<(std::ostream& o, const HexCharStruct& hs)
 {
-    return (o << std::hex << (int)hs.c);
+    if( (int)hs.c < 16 ) {
+        return (o << 0 << std::hex << (int)hs.c);
+    } else {
+        return (o << std::hex << (int)hs.c);
+    }
 }
 
 inline HexCharStruct hex(unsigned char _c)
