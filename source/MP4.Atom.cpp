@@ -50,3 +50,18 @@ void Atom::setLength( int dataLength )
 {
     _dataLength = dataLength;
 }
+
+void Atom::setStreamPos( std::streampos start, std::streampos end )
+{
+    _start = start;
+    _end = end;
+}
+
+std::streampos Atom::getStartStreamPos()
+{
+    return _start;
+}
+
+std::streampos Atom::getEndStreamPos() {
+    return _end;
+}

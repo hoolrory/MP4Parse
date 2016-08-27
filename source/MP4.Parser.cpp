@@ -137,6 +137,8 @@ Parser::Parser( char * filename )
 
 MP4::Atom* Parser::parseNextAtom()
 {
+    std::streampos atomStart = this->_stream->tellg();
+    
     size_t length     = this->_stream->readBigEndianUnsignedInteger();
     if ( this->_stream->eof() ) {
         return nullptr;
@@ -173,7 +175,6 @@ MP4::Atom* Parser::parseNextAtom()
 
     MP4::Atom* atom;
     
-    /* Container atoms */
     if( strcmp( type, "avc1" ) == 0 )
     {
         atom = new MP4::AVC1();
@@ -258,7 +259,7 @@ MP4::Atom* Parser::parseNextAtom()
     {
         atom = new MP4::UDTA();
     }
-    else if( strcmp( type, "avcC" ) == 0 )/* Data atoms */
+    else if( strcmp( type, "avcC" ) == 0 )
     {
         atom = new MP4::AVCC();
     }
@@ -469,6 +470,10 @@ MP4::Atom* Parser::parseNextAtom()
     if( dataAtom ) {
         dataAtom->processData( this->_stream, dataLength );
     }
+    
+    std::streampos atomEnd = this->_stream->tellg();
+    
+    atom->setStreamPos(atomStart, atomEnd);
     
     return atom;
 }

@@ -48,7 +48,9 @@ namespace MP4
             Atom * _parent;
             std::string _type;
             int _dataLength;
-            
+            std::streampos _start;
+            std::streampos _end;
+        
         public:
             
             virtual ~Atom( void );
@@ -58,6 +60,11 @@ namespace MP4
             int getLength( void );
         
             void setLength( int dataLength );
+        
+            void setStreamPos( std::streampos start, std::streampos end );
+        
+            std::streampos getStartStreamPos();
+            std::streampos getEndStreamPos();
         
             virtual std::string getName() { return ""; };
             virtual std::string getContent( void ) = 0;
