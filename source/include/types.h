@@ -44,6 +44,15 @@ typedef struct _matrix
     float x;
     float y;
     float w;
+    
+    std::string print()
+    {
+        std::ostringstream o;
+        o << a << "    " << b << "    " << u << "\n";
+        o << c << "    " << d << "    " << v << "\n";
+        o << x << "    " << y << "    " << w << "\n";
+        return o.str();
+    }
 }
 matrix;
 

@@ -48,7 +48,8 @@ std::string MVHD::getContent( void )
     o << "Duration:          " << this->_duration         << "\n";
     o << "Rate:              " << this->_rate             << "\n";
     o << "Volume:            " << this->_volume           << "\n";
-   
+    o << "Matrix:            " << "\n";
+    o << this->_matrix.print();
     return o.str();
 }
 

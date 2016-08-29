@@ -51,6 +51,8 @@ std::string TKHD::getContent( void )
     o << "Width:             " << this->_width            << "\n";
     o << "Height:            " << this->_height           << "\n";
     o << "Alternate Group    " << this->_alternateGroup   << "\n";
+    o << "Matrix:            " << "\n";
+    o << this->_matrix.print();
     
     return o.str();
 }
