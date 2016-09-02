@@ -455,7 +455,7 @@ std::string * BinaryStream::readUTF8String( void )
         s->append( 1, c );
     }
     
-    return NULL;
+    return s;
 }
 
 std::string * BinaryStream::readLongUTF8String( void )
@@ -474,7 +474,7 @@ std::string * BinaryStream::readLongUTF8String( void )
         s->append( 1, c );
     }
     
-    return NULL;
+    return s;
 }
             
 void BinaryStream::readMatrix( matrix * m )
