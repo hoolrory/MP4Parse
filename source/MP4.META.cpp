@@ -21,6 +21,5 @@ std::string META::getContent( void )
 void META::processData( MP4::BinaryStream * stream, size_t length )
 {
     (void) stream;
-    (void) length;
-    stream->ignore(4);
+    stream->ignore(length);
 }
