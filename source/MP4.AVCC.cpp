@@ -19,8 +19,6 @@ std::string AVCC::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
     o << "Configuration Version:    " << this->_configurationVersion << "\n";
     o << "AVC Level Indication:     " << this->_avcLevelIndication   << "\n";
     o << "AVC Profile Indication:   " << this->_avcProfileIndication << "\n";
