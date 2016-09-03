@@ -268,6 +268,10 @@ MP4::Atom* Parser::parseNextAtom()
     {
         atom = ( MP4::Atom * )( new MP4::BXML() );
     }
+    else if( strcmp( type, "clef") == 0 )
+    {
+        atom = new MP4::CLEF();
+    }
     else if( strcmp( type, "co64" ) == 0 )
     {
         atom = ( MP4::Atom * )( new MP4::CO64() );
@@ -287,6 +291,10 @@ MP4::Atom* Parser::parseNextAtom()
     else if( strcmp( type, "esds" ) == 0 )
     {
         atom = new MP4::ESDS();
+    }
+    else if( strcmp( type, "enof") == 0 )
+    {
+        atom = new MP4::ENOF();
     }
     else if( strcmp( type, "free" ) == 0 )
     {
@@ -360,6 +368,10 @@ MP4::Atom* Parser::parseNextAtom()
     {
         atom = ( MP4::Atom * )( new MP4::PITM() );
     }
+    else if( strcmp( type, "prof" ) == 0 )
+    {
+        atom = ( MP4::Atom * )( new MP4::PROF() );
+    }
     else if( strcmp( type, "sbgp" ) == 0 )
     {
         atom = ( MP4::Atom * )( new MP4::SBGP() );
@@ -419,6 +431,10 @@ MP4::Atom* Parser::parseNextAtom()
     else if( strcmp( type, "stz2" ) == 0 )
     {
         atom = ( MP4::Atom * )( new MP4::STZ2() );
+    }
+    else if( strcmp( type, "tapt" ) == 0 )
+    {
+        atom = ( MP4::Atom * )( new MP4::TAPT() );
     }
     else if( strcmp( type, "tfhd" ) == 0 )
     {
@@ -518,5 +534,4 @@ std::string Parser::getBytes( Atom * atom )
         o2 << hex(s[0]) << " ";
     }
     return o1.str() + "\n\n" + o2.str();
-    
 }

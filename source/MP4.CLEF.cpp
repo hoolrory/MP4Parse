@@ -28,32 +28,24 @@
  ******************************************************************************/
  
 /* $Id$ */
-#ifndef _MP4_ELST_H_
-#define _MP4_ELST_H_
-#pragma once
 
-#include "mp4.h"
-#include "MP4.DataAtom.h"
-#include "MP4.BinaryStream.h"
+#include "MP4.CLEF.h"
 
-namespace MP4
+using namespace MP4;
+          
+CLEF::CLEF( void )
 {
-    class ELST : public DataAtom
-    {
-        private:
-            
-            
-        protected:
-            
-            
-        public:
-            
-            ELST( void );
-        
-            std::string getName() { return "Edit List Box"; }
-            std::string getContent( void );
-            void processData( MP4::BinaryStream * stream, size_t length );
-    };
+    this->_type.append( "CLEF" );
 }
 
-#endif /* _MP4_ELST_H_ */
+std::string CLEF::getContent( void )
+{
+    std::ostringstream o;
+    
+    return o.str();
+}
+
+void CLEF::processData( MP4::BinaryStream * stream, size_t length )
+{
+    stream->ignore( length );
+}

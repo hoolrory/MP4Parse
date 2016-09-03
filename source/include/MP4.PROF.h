@@ -28,8 +28,8 @@
  ******************************************************************************/
  
 /* $Id$ */
-#ifndef _MP4_ELST_H_
-#define _MP4_ELST_H_
+#ifndef _MP4_PROF_H_
+#define _MP4_PROF_H_
 #pragma once
 
 #include "mp4.h"
@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class ELST : public DataAtom
+    class PROF : public DataAtom
     {
         private:
             
@@ -48,12 +48,12 @@ namespace MP4
             
         public:
             
-            ELST( void );
+            PROF( void );
         
-            std::string getName() { return "Edit List Box"; }
+            std::string getName() { return "Track Production Aperture Dimensions Box"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };
 }
 
-#endif /* _MP4_ELST_H_ */
+#endif /* _MP4_PROF_H_ */

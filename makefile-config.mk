@@ -76,6 +76,7 @@ DEPS_mp4parse       = MP4.Atom \
                       MP4.Parser \
                       MP4.UnknownAtom \
                       MP4.BXML \
+                      MP4.CLEF \
                       MP4.CO64 \
                       MP4.CPRT \
                       MP4.CTTS \
@@ -83,6 +84,7 @@ DEPS_mp4parse       = MP4.Atom \
 					  MP4.DINF \
 					  MP4.EDTS \
                       MP4.ELST \
+                      MP4.ENOF \
 					  MP4.ESDS \
                       MP4.FREE \
                       MP4.FRMA \
@@ -112,6 +114,7 @@ DEPS_mp4parse       = MP4.Atom \
                       MP4.PADB \
                       MP4.PDIN \
                       MP4.PITM \
+                      MP4.PROF \
                       MP4.SBGP \
                       MP4.SCHI \
                       MP4.SCHM \
@@ -131,6 +134,7 @@ DEPS_mp4parse       = MP4.Atom \
                       MP4.STTS \
                       MP4.STZ2 \
                       MP4.SUBS \
+					  MP4.TAPT \
                       MP4.TFHD \
                       MP4.TFRA \
                       MP4.TKHD \
