@@ -46,6 +46,11 @@ int Atom::getDataLength( void )
     return _dataLength;
 }
 
+void Atom::setHeaderLength( int headerLength )
+{
+    _headerLength = headerLength;
+}
+
 void Atom::setDataLength( int dataLength )
 {
     _dataLength = dataLength;

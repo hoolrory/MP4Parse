@@ -47,6 +47,7 @@ namespace MP4
             
             Atom * _parent;
             std::string _type;
+            int _headerLength;
             int _dataLength;
             std::streampos _start;
             std::streampos _end;
@@ -59,6 +60,7 @@ namespace MP4
             
             int getDataLength( void );
         
+            void setHeaderLength( int headerLength );
             void setDataLength( int dataLength );
         
             void setStreamPos( std::streampos start, std::streampos end );

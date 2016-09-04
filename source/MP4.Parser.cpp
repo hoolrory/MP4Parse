@@ -150,6 +150,8 @@ MP4::Atom* Parser::parseNextAtom()
     memset( type, 0, 5 );
     this->_stream->read( ( char * )type, 4 );
     
+    int headerLength = 8;
+    
     char const hex_chars[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
     
     std::string typeHex;
@@ -163,6 +165,7 @@ MP4::Atom* Parser::parseNextAtom()
     
     if( length == 1 )
     {
+        headerLength += 8;
         dataLength = this->_stream->readBigEndianUnsignedInteger() - 16;
     }
     else
@@ -481,6 +484,7 @@ MP4::Atom* Parser::parseNextAtom()
         atom = new MP4::UnknownAtom( type );
     }
     
+    atom->setHeaderLength( headerLength );
     atom->setDataLength( (int)dataLength );
     
     DataAtom *dataAtom = dynamic_cast<DataAtom*>( atom );
