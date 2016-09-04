@@ -50,7 +50,7 @@ namespace MP4
             
             MFHD( void );
         
-            std::string getName() { return "Movie Fragment Header Box"; }
+            std::string getName() { return "Movie Fragment Header"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

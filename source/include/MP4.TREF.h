@@ -50,7 +50,7 @@ namespace MP4
             
             TREF( void );
         
-            std::string getName() { return "Track Reference Box"; }
+            std::string getName() { return "Track Reference"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

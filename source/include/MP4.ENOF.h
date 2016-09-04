@@ -50,7 +50,7 @@ namespace MP4
             
             ENOF( void );
         
-            std::string getName() { return "Track Encoded Pixels Dimensions Box"; }
+            std::string getName() { return "Track Encoded Pixels Dimensions"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

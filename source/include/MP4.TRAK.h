@@ -29,7 +29,7 @@ namespace MP4
         TRAK( void ) : ContainerAtom( ( char * )"TRAK" )
         {}
         
-        std::string getName() { return "Track Box"; }
+        std::string getName() { return "Track"; }
         std::string getContent( void );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

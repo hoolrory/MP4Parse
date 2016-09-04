@@ -50,7 +50,7 @@ namespace MP4
             
             SMHD( void );
         
-            std::string getName() { return "Sound Media Header Box"; }
+            std::string getName() { return "Sound Media Header"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

@@ -50,7 +50,7 @@ namespace MP4
             
             XML( void );
         
-            std::string getName() { return "XML Box"; }
+            std::string getName() { return "XML"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

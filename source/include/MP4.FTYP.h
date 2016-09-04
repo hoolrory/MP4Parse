@@ -54,7 +54,7 @@ namespace MP4
             FTYP( void );
             ~FTYP( void );
         
-            std::string getName() { return "File Type Box"; }
+            std::string getName() { return "File Type"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

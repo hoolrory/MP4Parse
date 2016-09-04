@@ -50,7 +50,7 @@ namespace MP4
             
             STZ2( void );
         
-            std::string getName() { return "Compact Sample Sizes Box"; }
+            std::string getName() { return "Compact Sample Sizes"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

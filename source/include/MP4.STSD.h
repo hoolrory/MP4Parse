@@ -52,7 +52,7 @@ namespace MP4
             STSD( void ) : ContainerAtom( ( char * )"STSD" )
             {}
         
-            std::string getName() { return "Sample Descriptions Box"; }
+            std::string getName() { return "Sample Descriptions"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
             int getLength( void );

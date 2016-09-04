@@ -39,7 +39,7 @@ namespace MP4
             AVC1( void ) : ContainerAtom( ( char * )"AVC1" )
             {}
         
-            std::string getName() { return "H.264 Description Box"; };
+            std::string getName() { return "H.264 Description"; };
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
             int getLength( void );

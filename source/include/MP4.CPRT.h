@@ -50,7 +50,7 @@ namespace MP4
             
             CPRT( void );
         
-            std::string getName() { return "Copyright Box"; }
+            std::string getName() { return "Copyright"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

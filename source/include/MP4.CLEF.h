@@ -50,7 +50,7 @@ namespace MP4
             
             CLEF( void );
         
-            std::string getName() { return "Track Clean Aperture Dimensions Box"; }
+            std::string getName() { return "Track Clean Aperture Dimensions"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

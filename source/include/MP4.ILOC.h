@@ -50,7 +50,7 @@ namespace MP4
             
             ILOC( void );
         
-            std::string getName() { return "Item Location Box"; }
+            std::string getName() { return "Item Location"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

@@ -50,7 +50,7 @@ namespace MP4
             
             PADB( void );
         
-            std::string getName() { return "Sample Padding Bits Box"; }
+            std::string getName() { return "Sample Padding Bits"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

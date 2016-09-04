@@ -50,7 +50,7 @@ namespace MP4
             
             PROF( void );
         
-            std::string getName() { return "Track Production Aperture Dimensions Box"; }
+            std::string getName() { return "Track Production Aperture Dimensions"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

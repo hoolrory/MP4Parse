@@ -50,7 +50,7 @@ namespace MP4
             
             TREX( void );
         
-            std::string getName() { return "Track Extends Defaults Box"; }
+            std::string getName() { return "Track Extends Defaults"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

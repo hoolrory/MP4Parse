@@ -59,7 +59,7 @@ namespace MP4
         public:
             
             CTTS( void );
-            std::string getName() { return "Composition Time to Sample Box"; }
+            std::string getName() { return "Composition Time to Sample"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

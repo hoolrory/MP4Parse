@@ -50,7 +50,7 @@ namespace MP4
             
             STDP( void );
         
-            std::string getName() { return "Sample Degradation Priority Box"; }
+            std::string getName() { return "Sample Degradation Priority"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

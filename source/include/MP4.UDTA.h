@@ -51,7 +51,7 @@ namespace MP4
             UDTA( void ) : ContainerAtom( ( char * )"UDTA" )
             {}
         
-            std::string getName() { return "User Data Box"; }
+            std::string getName() { return "User Data"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

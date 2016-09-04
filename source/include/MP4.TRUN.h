@@ -50,7 +50,7 @@ namespace MP4
             
             TRUN( void );
         
-            std::string getName() { return "Track Fragment Run Box"; }
+            std::string getName() { return "Track Fragment Run"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

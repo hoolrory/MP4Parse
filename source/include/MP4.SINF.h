@@ -29,7 +29,7 @@ namespace MP4
         SINF( void ) : ContainerAtom( ( char * )"SINF" )
         {}
         
-        std::string getName() { return "Protection Scheme Information Box"; }
+        std::string getName() { return "Protection Scheme Information"; }
         std::string getContent( void );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

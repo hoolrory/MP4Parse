@@ -29,7 +29,7 @@ namespace MP4
         MOOF( void ) : ContainerAtom( ( char * )"MOOF" )
         {}
         
-        std::string getName() { return "Movie Fragment Box"; }
+        std::string getName() { return "Movie Fragment"; }
         std::string getContent( void );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

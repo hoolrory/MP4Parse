@@ -50,7 +50,7 @@ namespace MP4
             
             SCHI( void );
         
-            std::string getName() { return "Scheme Information Box"; }
+            std::string getName() { return "Scheme Information"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

@@ -29,7 +29,7 @@ namespace MP4
         MDIA( void ) : ContainerAtom( ( char * )"MDIA" )
         {}
         
-        std::string getName() { return "Media Box"; }
+        std::string getName() { return "Media"; }
         std::string getContent( void );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

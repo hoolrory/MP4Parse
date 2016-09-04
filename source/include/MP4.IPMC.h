@@ -50,7 +50,7 @@ namespace MP4
             
             IPMC( void );
         
-            std::string getName() { return "IPMP Control Box"; }
+            std::string getName() { return "IPMP Control"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

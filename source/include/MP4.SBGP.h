@@ -50,7 +50,7 @@ namespace MP4
             
             SBGP( void );
         
-            std::string getName() { return "Sample to Group Box"; }
+            std::string getName() { return "Sample to Group"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

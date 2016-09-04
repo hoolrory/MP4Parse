@@ -29,7 +29,7 @@ namespace MP4
         MFRA( void ) : ContainerAtom( ( char * )"MFRA" )
         {}
         
-        std::string getName() { return "Movie Fragment Random Access Box"; }
+        std::string getName() { return "Movie Fragment Random Access"; }
         std::string getContent( void );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

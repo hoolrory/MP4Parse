@@ -29,7 +29,7 @@ namespace MP4
         TAPT( void ) : ContainerAtom( ( char * )"TAPT" )
         {}
         
-        std::string getName() { return "Track Aperture Mode Dimension Box"; }
+        std::string getName() { return "Track Aperture Mode Dimension"; }
         std::string getContent( void );
         void processData( MP4::BinaryStream * stream, size_t length );
     };

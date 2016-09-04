@@ -50,7 +50,7 @@ namespace MP4
             
             SDTP( void );
         
-            std::string getName() { return "Independent and Disposables Samples Boxes"; }
+            std::string getName() { return "Independent/Disposable Samples"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

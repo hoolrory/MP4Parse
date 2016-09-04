@@ -50,7 +50,7 @@ namespace MP4
             
             TFRA( void );
         
-            std::string getName() { return "Track Fragment Random Access Box"; }
+            std::string getName() { return "Track Fragment Random Access"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

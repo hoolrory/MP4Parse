@@ -50,7 +50,7 @@ namespace MP4
             
             MEHD( void );
         
-            std::string getName() { return "Movie Extends Header Box"; }
+            std::string getName() { return "Movie Extends Header"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

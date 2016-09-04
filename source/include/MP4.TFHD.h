@@ -50,7 +50,7 @@ namespace MP4
             
             TFHD( void );
         
-            std::string getName() { return "Track Fragment Header Box"; }
+            std::string getName() { return "Track Fragment Header"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };

@@ -50,7 +50,7 @@ namespace MP4
             
             FREE( void );
         
-            std::string getName() { return "Free Space Box"; }
+            std::string getName() { return "Free Space"; }
             std::string getContent( void );
             void processData( MP4::BinaryStream * stream, size_t length );
     };
