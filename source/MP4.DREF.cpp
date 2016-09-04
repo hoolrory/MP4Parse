@@ -45,8 +45,3 @@ void DREF::processData( MP4::BinaryStream * stream, size_t length )
     FullBox::processData(stream, length);
     stream->ignore( length - 16 );
 }
-
-int DREF::getLength()
-{
-    return Atom::getLength();
-}

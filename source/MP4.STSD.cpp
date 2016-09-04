@@ -44,10 +44,5 @@ std::string STSD::getContent( void )
 void STSD::processData( MP4::BinaryStream * stream, size_t length )
 {
     FullBox::processData(stream, length);
-    stream->ignore( length - 4 );
-}
-
-int STSD::getLength()
-{
-    return Atom::getLength();
+    stream->ignore( 4 );
 }

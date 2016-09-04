@@ -83,8 +83,3 @@ void MP4A::processData( MP4::BinaryStream * stream, size_t length )
     
     stream->ignore(length - 28 - skip);
 }
-
-int MP4A::getLength()
-{
-    return Atom::getLength();
-}
