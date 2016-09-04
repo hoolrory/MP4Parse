@@ -74,7 +74,7 @@ int ContainerAtom::lengthOfChildren( void )
     int length = 0;
     for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
     {
-        length += ( *it )->getLength();
+        length += ( *it )->getDataLength();
     }
     return length;
 }

@@ -64,7 +64,7 @@ void AVC1::processData( MP4::BinaryStream * stream, size_t length )
     stream->readBigEndianUnsignedShort();
 }
 
-int AVC1::getLength()
+int AVC1::getDataLength()
 {
-    return Atom::getLength();
+    return Atom::getDataLength();
 }

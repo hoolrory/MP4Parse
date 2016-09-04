@@ -41,12 +41,12 @@ std::string Atom::getType( void )
     return this->_type;
 }
 
-int Atom::getLength( void )
+int Atom::getDataLength( void )
 {
     return _dataLength;
 }
 
-void Atom::setLength( int dataLength )
+void Atom::setDataLength( int dataLength )
 {
     _dataLength = dataLength;
 }

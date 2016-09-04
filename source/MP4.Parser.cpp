@@ -88,7 +88,7 @@ Parser::Parser( char * filename )
         size=ftell (pFile);
         fclose (pFile);
     }
-    this->_file->setLength(size);
+    this->_file->setDataLength(size);
     
     if( _verboseLogging )
     {
@@ -105,7 +105,7 @@ Parser::Parser( char * filename )
             break;
         }
         
-        while( parentAtom->lengthOfChildren() + atom->getLength() > parentAtom->getLength()) {
+        while( parentAtom->lengthOfChildren() + atom->getDataLength() > parentAtom->getDataLength()) {
             if( parentDepth == 0 ) {
                 break;
             }
@@ -481,7 +481,7 @@ MP4::Atom* Parser::parseNextAtom()
         atom = new MP4::UnknownAtom( type );
     }
     
-    atom->setLength( (int)dataLength );
+    atom->setDataLength( (int)dataLength );
     
     DataAtom *dataAtom = dynamic_cast<DataAtom*>( atom );
     if( dataAtom ) {

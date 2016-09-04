@@ -57,9 +57,9 @@ namespace MP4
             
             std::string getType( void );
             
-            int getLength( void );
+            int getDataLength( void );
         
-            void setLength( int dataLength );
+            void setDataLength( int dataLength );
         
             void setStreamPos( std::streampos start, std::streampos end );
         
