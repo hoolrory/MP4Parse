@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class PITM : Atom
+    class PITM : public Atom
     {
         private:
             

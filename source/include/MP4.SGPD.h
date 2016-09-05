@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class SGPD : Atom
+    class SGPD : public Atom
     {
         private:
             

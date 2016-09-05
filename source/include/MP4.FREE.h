@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class FREE : Atom
+    class FREE : public Atom
     {
         private:
             

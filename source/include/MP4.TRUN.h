@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class TRUN : Atom
+    class TRUN : public Atom
     {
         private:
             

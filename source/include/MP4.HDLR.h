@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class HDLR : FullBox
+    class HDLR : public FullBox
     {
         private:
             

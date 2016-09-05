@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class CPRT : Atom
+    class CPRT : public Atom
     {
         private:
             

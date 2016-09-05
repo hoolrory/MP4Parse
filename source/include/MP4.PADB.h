@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class PADB : Atom
+    class PADB : public Atom
     {
         private:
             

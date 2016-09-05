@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class IMIF : Atom
+    class IMIF : public Atom
     {
         private:
             

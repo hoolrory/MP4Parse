@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class TREF : Atom
+    class TREF : public Atom
     {
         private:
             

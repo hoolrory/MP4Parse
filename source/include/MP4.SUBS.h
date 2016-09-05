@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class SUBS : Atom
+    class SUBS : public Atom
     {
         private:
             

@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class STSC : FullBox
+    class STSC : public FullBox
     {
         typedef struct _entry
         {

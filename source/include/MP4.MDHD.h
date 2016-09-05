@@ -39,7 +39,7 @@
 
 namespace MP4
 {
-    class MDHD : FullBox
+    class MDHD : public FullBox
     {
         private:
             

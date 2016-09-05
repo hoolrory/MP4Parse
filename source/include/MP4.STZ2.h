@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class STZ2 : Atom
+    class STZ2 : public Atom
     {
         private:
             

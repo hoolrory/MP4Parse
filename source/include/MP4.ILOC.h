@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class ILOC : Atom
+    class ILOC : public Atom
     {
         private:
             

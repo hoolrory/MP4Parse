@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class STCO : FullBox
+    class STCO : public FullBox
     {
         private:
             

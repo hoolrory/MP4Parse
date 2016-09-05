@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class IPMC : Atom
+    class IPMC : public Atom
     {
         private:
             

@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class TREX : Atom
+    class TREX : public Atom
     {
         private:
             

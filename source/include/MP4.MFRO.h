@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class MFRO : Atom
+    class MFRO : public Atom
     {
         private:
             

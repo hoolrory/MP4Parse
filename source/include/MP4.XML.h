@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class XML : Atom
+    class XML : public Atom
     {
         private:
             

@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class SBGP : Atom
+    class SBGP : public Atom
     {
         private:
             

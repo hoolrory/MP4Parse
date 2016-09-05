@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class VMHD : FullBox
+    class VMHD : public FullBox
     {
         private:
             

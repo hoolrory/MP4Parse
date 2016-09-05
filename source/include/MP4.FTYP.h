@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class FTYP : Atom
+    class FTYP : public Atom
     {
         private:
             

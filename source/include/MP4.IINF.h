@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class IINF : Atom
+    class IINF : public Atom
     {
         private:
             

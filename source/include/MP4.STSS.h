@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class STSS : FullBox
+    class STSS : public FullBox
     {
         private:
             

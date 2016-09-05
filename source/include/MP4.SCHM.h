@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class SCHM : Atom
+    class SCHM : public Atom
     {
         private:
             

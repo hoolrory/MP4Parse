@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class FRMA : Atom
+    class FRMA : public Atom
     {
         private:
             

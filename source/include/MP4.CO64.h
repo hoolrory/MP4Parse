@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class CO64 : Atom
+    class CO64 : public Atom
     {
         private:
             

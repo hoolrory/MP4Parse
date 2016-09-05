@@ -42,8 +42,6 @@ namespace MP4
     {
         private:
             
-            
-            
         protected:
             
             Atom * _parent;

@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class SDTP : Atom
+    class SDTP : public Atom
     {
         private:
             

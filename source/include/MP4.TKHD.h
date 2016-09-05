@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class TKHD : FullBox
+    class TKHD : public FullBox
     {
         private:
             

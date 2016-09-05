@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class STDP : Atom
+    class STDP : public Atom
     {
         private:
             

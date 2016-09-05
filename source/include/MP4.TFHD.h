@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class TFHD : Atom
+    class TFHD : public Atom
     {
         private:
             

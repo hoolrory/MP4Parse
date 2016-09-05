@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class BXML : Atom
+    class BXML : public Atom
     {
         private:
             

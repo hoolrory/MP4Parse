@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class TFRA : Atom
+    class TFRA : public Atom
     {
         private:
             

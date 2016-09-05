@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class MDAT : Atom
+    class MDAT : public Atom
     {
         private:
             

@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class HMHD : Atom
+    class HMHD : public Atom
     {
         private:
             

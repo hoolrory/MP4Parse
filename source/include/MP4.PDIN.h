@@ -38,7 +38,7 @@
 
 namespace MP4
 {
-    class PDIN : Atom
+    class PDIN : public Atom
     {
         private:
             
