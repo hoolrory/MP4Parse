@@ -57,7 +57,8 @@ namespace MP4
             virtual ~Atom( void );
             
             std::string getType( void );
-            
+        
+            int getHeaderLength( void );
             int getDataLength( void );
         
             void setHeaderLength( int headerLength );
