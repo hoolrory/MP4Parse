@@ -33,12 +33,12 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.DataAtom.h"
+#include "MP4.Atom.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class MEHD : DataAtom
+    class MEHD : Atom
     {
         private:
             

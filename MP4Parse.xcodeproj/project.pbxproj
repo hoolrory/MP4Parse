@@ -16,7 +16,6 @@
 		1F6E3BB31D451DFA0008CDD5 /* MP4.ContainerAtom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3B791D451DFA0008CDD5 /* MP4.ContainerAtom.cpp */; };
 		1F6E3BB41D451DFA0008CDD5 /* MP4.CPRT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3B7A1D451DFA0008CDD5 /* MP4.CPRT.cpp */; };
 		1F6E3BB51D451DFA0008CDD5 /* MP4.CTTS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3B7B1D451DFA0008CDD5 /* MP4.CTTS.cpp */; };
-		1F6E3BB61D451DFA0008CDD5 /* MP4.DataAtom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3B7C1D451DFA0008CDD5 /* MP4.DataAtom.cpp */; };
 		1F6E3BB71D451DFA0008CDD5 /* MP4.DREF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3B7D1D451DFA0008CDD5 /* MP4.DREF.cpp */; };
 		1F6E3BB81D451DFA0008CDD5 /* MP4.ELST.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3B7E1D451DFA0008CDD5 /* MP4.ELST.cpp */; };
 		1F6E3BB91D451DFA0008CDD5 /* MP4.File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3B7F1D451DFA0008CDD5 /* MP4.File.cpp */; };
@@ -119,7 +118,6 @@
 		1F6E3B791D451DFA0008CDD5 /* MP4.ContainerAtom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.ContainerAtom.cpp; path = source/MP4.ContainerAtom.cpp; sourceTree = "<group>"; };
 		1F6E3B7A1D451DFA0008CDD5 /* MP4.CPRT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.CPRT.cpp; path = source/MP4.CPRT.cpp; sourceTree = "<group>"; };
 		1F6E3B7B1D451DFA0008CDD5 /* MP4.CTTS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.CTTS.cpp; path = source/MP4.CTTS.cpp; sourceTree = "<group>"; };
-		1F6E3B7C1D451DFA0008CDD5 /* MP4.DataAtom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.DataAtom.cpp; path = source/MP4.DataAtom.cpp; sourceTree = "<group>"; };
 		1F6E3B7D1D451DFA0008CDD5 /* MP4.DREF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.DREF.cpp; path = source/MP4.DREF.cpp; sourceTree = "<group>"; };
 		1F6E3B7E1D451DFA0008CDD5 /* MP4.ELST.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.ELST.cpp; path = source/MP4.ELST.cpp; sourceTree = "<group>"; };
 		1F6E3B7F1D451DFA0008CDD5 /* MP4.File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.File.cpp; path = source/MP4.File.cpp; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 		1F6E3BEF1D451E230008CDD5 /* MP4.ContainerAtom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MP4.ContainerAtom.h; path = source/include/MP4.ContainerAtom.h; sourceTree = SOURCE_ROOT; };
 		1F6E3BF01D451E230008CDD5 /* MP4.CPRT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MP4.CPRT.h; path = source/include/MP4.CPRT.h; sourceTree = SOURCE_ROOT; };
 		1F6E3BF11D451E230008CDD5 /* MP4.CTTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MP4.CTTS.h; path = source/include/MP4.CTTS.h; sourceTree = SOURCE_ROOT; };
-		1F6E3BF21D451E230008CDD5 /* MP4.DataAtom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MP4.DataAtom.h; path = source/include/MP4.DataAtom.h; sourceTree = SOURCE_ROOT; };
 		1F6E3BF31D451E230008CDD5 /* MP4.DREF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MP4.DREF.h; path = source/include/MP4.DREF.h; sourceTree = SOURCE_ROOT; };
 		1F6E3BF41D451E230008CDD5 /* MP4.ELST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MP4.ELST.h; path = source/include/MP4.ELST.h; sourceTree = SOURCE_ROOT; };
 		1F6E3BF51D451E230008CDD5 /* MP4.File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MP4.File.h; path = source/include/MP4.File.h; sourceTree = SOURCE_ROOT; };
@@ -340,7 +337,6 @@
 				1F6E3B791D451DFA0008CDD5 /* MP4.ContainerAtom.cpp */,
 				1F6E3B7A1D451DFA0008CDD5 /* MP4.CPRT.cpp */,
 				1F6E3B7B1D451DFA0008CDD5 /* MP4.CTTS.cpp */,
-				1F6E3B7C1D451DFA0008CDD5 /* MP4.DataAtom.cpp */,
 				1F8BF5911D5B6990002229BF /* MP4.DINF.cpp */,
 				1F6E3B7D1D451DFA0008CDD5 /* MP4.DREF.cpp */,
 				1F8BF5921D5B6990002229BF /* MP4.EDTS.cpp */,
@@ -433,7 +429,6 @@
 				1F6E3BEF1D451E230008CDD5 /* MP4.ContainerAtom.h */,
 				1F6E3BF01D451E230008CDD5 /* MP4.CPRT.h */,
 				1F6E3BF11D451E230008CDD5 /* MP4.CTTS.h */,
-				1F6E3BF21D451E230008CDD5 /* MP4.DataAtom.h */,
 				1F8BF5AB1D5B6E7D002229BF /* MP4.DINF.h */,
 				1F6E3BF31D451E230008CDD5 /* MP4.DREF.h */,
 				1F8BF5851D5B6977002229BF /* MP4.EDTS.h */,
@@ -595,7 +590,6 @@
 				1F6E3BB71D451DFA0008CDD5 /* MP4.DREF.cpp in Sources */,
 				1F8BF5541D54A265002229BF /* MP4.META.cpp in Sources */,
 				1F6E3BDD1D451DFA0008CDD5 /* MP4.SUBS.cpp in Sources */,
-				1F6E3BB61D451DFA0008CDD5 /* MP4.DataAtom.cpp in Sources */,
 				1F6E3BD91D451DFA0008CDD5 /* MP4.STSS.cpp in Sources */,
 				1F6E3BD61D451DFA0008CDD5 /* MP4.STSC.cpp in Sources */,
 				1F6E3BD41D451DFA0008CDD5 /* MP4.STCO.cpp in Sources */,

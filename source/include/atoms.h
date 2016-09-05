@@ -36,7 +36,7 @@
 #include "MP4.Atom.h"
 #include "MP4.AVC1.h"
 #include "MP4.AVCC.h"
-#include "MP4.DataAtom.h"
+#include "MP4.Atom.h"
 #include "MP4.ContainerAtom.h"
 #include "MP4.File.h"
 #include "MP4.FullBox.h"

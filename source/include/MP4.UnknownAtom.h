@@ -34,7 +34,7 @@
 #define _MP4_UNKNOWN_ATOM_
 
 #include "mp4.h"
-#include "MP4.DataAtom.h"
+#include "MP4.Atom.h"
 
 namespace MP4
 {
@@ -60,7 +60,7 @@ namespace MP4
             virtual const char * what( void ) const throw();
     };
     
-    class UnknownAtom : public DataAtom
+    class UnknownAtom : public Atom
     {
         private:
             

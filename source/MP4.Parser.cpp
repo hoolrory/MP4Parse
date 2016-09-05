@@ -105,22 +105,25 @@ Parser::Parser( char * filename )
             break;
         }
         
-        while( parentAtom->lengthOfChildren() + atom->getDataLength() > parentAtom->getDataLength()) {
+        while( parentAtom->lengthOfChildren() + atom->getLength() > parentAtom->getDataLength()) {
             if( parentDepth == 0 ) {
                 break;
             }
             parentAtom = previousParents.top();
             previousParents.pop();
             parentDepth--;
-            if( _verboseLogging )
-            {
+            
+            //if( _verboseLogging )
+            //{
                 std::cout << " ---- Resetting parent to " << parentAtom->getType() << " at "<< atom->getType() << "\n";
-            }
+            //}
         }
-        if( _verboseLogging )
-        {
+        int diff = parentAtom->getDataLength() - (parentAtom->lengthOfChildren() + atom->getDataLength()) ;
+        //if( _verboseLogging )
+        //{
             std::cout << "Adding child " << atom->getType() << " to parent " << parentAtom->getType() << "\n";
-        }
+        std::cout << "       remaining = " << diff << "\n";
+        //}
         parentAtom->addChild(atom);
         
         ContainerAtom *containerAtom = dynamic_cast<ContainerAtom*>( atom );
@@ -481,16 +484,13 @@ MP4::Atom* Parser::parseNextAtom()
     }
     else
     {
+        std::cout << "Got unknown atom " << type << "\n";
         atom = new MP4::UnknownAtom( type );
     }
     
     atom->setHeaderLength( headerLength );
     atom->setDataLength( (int)dataLength );
-    
-    DataAtom *dataAtom = dynamic_cast<DataAtom*>( atom );
-    if( dataAtom ) {
-        dataAtom->processData( this->_stream, dataLength );
-    }
+    atom->processData( this->_stream, dataLength );
     
     std::streampos atomEnd = this->_stream->tellg();
     
