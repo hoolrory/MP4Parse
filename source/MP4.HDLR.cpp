@@ -51,7 +51,7 @@ std::string HDLR::getContent( void )
     return o.str();
 }
 
-void HDLR::processData( MP4::BinaryStream * stream, size_t length )
+void HDLR::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     FullBox::processData( stream, length );
     
@@ -67,7 +67,7 @@ void HDLR::processData( MP4::BinaryStream * stream, size_t length )
     stream->readBigEndianUnsignedInteger();
     stream->readBigEndianUnsignedInteger();
     
-    int remaining = length - 24;
+    uint64_t remaining = length - 24;
     char name[ 2 ];
     while ( remaining > 0 ) {
         memset( name, 0, 2 );

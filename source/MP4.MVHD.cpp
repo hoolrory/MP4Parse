@@ -53,7 +53,7 @@ std::string MVHD::getContent( void )
     return o.str();
 }
 
-void MVHD::processData( MP4::BinaryStream * stream, size_t length )
+void MVHD::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     FullBox::processData( stream, length );
     

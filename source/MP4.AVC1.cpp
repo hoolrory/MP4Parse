@@ -27,7 +27,7 @@ std::string AVC1::getContent( void )
     return o.str();
 }
 
-void AVC1::processData( MP4::BinaryStream * stream, size_t length )
+void AVC1::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     (void) length;
     stream->ignore(6);
@@ -62,9 +62,4 @@ void AVC1::processData( MP4::BinaryStream * stream, size_t length )
     }
     _depth = stream->readBigEndianUnsignedShort();
     stream->readBigEndianUnsignedShort();
-}
-
-int AVC1::getDataLength()
-{
-    return Atom::getDataLength();
 }

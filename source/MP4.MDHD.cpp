@@ -51,7 +51,7 @@ std::string MDHD::getContent( void )
     return o.str();
 }
 
-void MDHD::processData( MP4::BinaryStream * stream, size_t length )
+void MDHD::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     size_t parsedLength;
     

@@ -45,7 +45,7 @@ std::string ELST::getContent( void )
     return o.str();
 }
 
-void ELST::processData( MP4::BinaryStream * stream, size_t length )
+void ELST::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

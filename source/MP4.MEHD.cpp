@@ -45,7 +45,7 @@ std::string MEHD::getContent( void )
     return o.str();
 }
 
-void MEHD::processData( MP4::BinaryStream * stream, size_t length )
+void MEHD::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

@@ -22,7 +22,7 @@ std::string ESDS::getContent( void )
     return o.str();
 }
 
-void ESDS::processData( MP4::BinaryStream * stream, size_t length )
+void ESDS::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     FullBox::processData( stream, length );
     stream->ignore( length - 4 );

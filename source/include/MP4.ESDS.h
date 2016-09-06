@@ -30,7 +30,7 @@ namespace MP4
         
         std::string getName() { return "ES Descriptor"; }
         std::string getContent( void );
-        void processData( MP4::BinaryStream * stream, size_t length );
+        void processData( MP4::BinaryStream * stream, uint64_t length );
     };
 }
 

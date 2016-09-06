@@ -41,7 +41,7 @@ std::string UDTA::getContent( void )
     return o.str();
 }
 
-void UDTA::processData( MP4::BinaryStream * stream, size_t length )
+void UDTA::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     (void) stream;
     (void) length;

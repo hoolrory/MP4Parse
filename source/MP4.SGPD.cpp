@@ -45,7 +45,7 @@ std::string SGPD::getContent( void )
     return o.str();
 }
 
-void SGPD::processData( MP4::BinaryStream * stream, size_t length )
+void SGPD::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

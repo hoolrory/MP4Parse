@@ -45,7 +45,7 @@ std::string CPRT::getContent( void )
     return o.str();
 }
 
-void CPRT::processData( MP4::BinaryStream * stream, size_t length )
+void CPRT::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

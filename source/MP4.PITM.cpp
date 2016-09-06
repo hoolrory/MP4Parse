@@ -45,7 +45,7 @@ std::string PITM::getContent( void )
     return o.str();
 }
 
-void PITM::processData( MP4::BinaryStream * stream, size_t length )
+void PITM::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

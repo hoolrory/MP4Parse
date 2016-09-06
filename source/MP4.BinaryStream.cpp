@@ -575,6 +575,13 @@ std::istream & BinaryStream::getline(char * s, std::streamsize n, char delim )
     return stream.getline( s, n, delim );
 }
 
+std::istream & BinaryStream::ignore( uint64_t n, int delim )
+{
+    // We lose some accurarcy here, but uint64_t's max size will work for up to 18,446 petabytes
+    // Since std::streamsize max size will work for half of that 9,223 petabytes, we should be good
+    return stream.ignore( (std::streamsize)n, delim );
+}
+
 std::istream & BinaryStream::ignore( std::streamsize n, int delim )
 {
     return stream.ignore( n, delim );

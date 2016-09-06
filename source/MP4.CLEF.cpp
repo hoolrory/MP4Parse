@@ -45,7 +45,7 @@ std::string CLEF::getContent( void )
     return o.str();
 }
 
-void CLEF::processData( MP4::BinaryStream * stream, size_t length )
+void CLEF::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

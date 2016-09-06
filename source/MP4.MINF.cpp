@@ -18,7 +18,7 @@ std::string MINF::getContent( void )
     return o.str();
 }
 
-void MINF::processData( MP4::BinaryStream * stream, size_t length )
+void MINF::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     (void) stream;
     (void) length;

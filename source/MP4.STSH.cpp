@@ -45,7 +45,7 @@ std::string STSH::getContent( void )
     return o.str();
 }
 
-void STSH::processData( MP4::BinaryStream * stream, size_t length )
+void STSH::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

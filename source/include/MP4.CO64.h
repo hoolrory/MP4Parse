@@ -51,7 +51,7 @@ namespace MP4
             CO64( void );
             std::string getName() { return "64-bit Chunk Offsets"; };
             std::string getContent( void );
-            void processData( MP4::BinaryStream * stream, size_t length );
+            void processData( MP4::BinaryStream * stream, uint64_t length );
     };
 }
 

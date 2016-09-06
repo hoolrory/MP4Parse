@@ -66,7 +66,7 @@ std::string CTTS::getContent( void )
     return o.str();
 }
 
-void CTTS::processData( MP4::BinaryStream * stream, size_t length )
+void CTTS::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     FullBox::processData(stream, length);
     

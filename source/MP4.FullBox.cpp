@@ -33,7 +33,7 @@
 
 using namespace MP4;
 
-void FullBox::processData( MP4::BinaryStream * stream, size_t length )
+void FullBox::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     uint32_t data;
     

@@ -73,7 +73,7 @@ inline int createMask(int a, int b)
     return r;
 }
 
-void AVCC::processData( MP4::BinaryStream * stream, size_t length )
+void AVCC::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     std::streampos start = stream->tellg();
     

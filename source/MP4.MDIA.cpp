@@ -18,7 +18,7 @@ std::string MDIA::getContent( void )
     return o.str();
 }
 
-void MDIA::processData( MP4::BinaryStream * stream, size_t length )
+void MDIA::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     (void) stream;
     (void) length;

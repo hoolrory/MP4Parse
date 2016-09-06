@@ -29,7 +29,7 @@ namespace MP4
         CTOO( void );
         std::string getName() { return "iTunes Encoder"; };
         std::string getContent( void );
-        void processData( MP4::BinaryStream * stream, size_t length );
+        void processData( MP4::BinaryStream * stream, uint64_t length );
     };
 }
 

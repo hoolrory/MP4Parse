@@ -57,7 +57,7 @@ std::string TKHD::getContent( void )
     return o.str();
 }
 
-void TKHD::processData( MP4::BinaryStream * stream, size_t length )
+void TKHD::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     FullBox::processData( stream, length );
     

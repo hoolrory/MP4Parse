@@ -17,7 +17,7 @@ std::string TAPT::getContent( void )
     return o.str();
 }
 
-void TAPT::processData( MP4::BinaryStream * stream, size_t length )
+void TAPT::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     (void) stream;
     (void) length;

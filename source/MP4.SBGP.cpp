@@ -45,7 +45,7 @@ std::string SBGP::getContent( void )
     return o.str();
 }
 
-void SBGP::processData( MP4::BinaryStream * stream, size_t length )
+void SBGP::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

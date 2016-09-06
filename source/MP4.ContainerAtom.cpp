@@ -113,7 +113,7 @@ Atom* ContainerAtom::findChild( const std::string &type )
     return NULL;
 }
 
-void ContainerAtom::processData( MP4::BinaryStream * stream, size_t length )
+void ContainerAtom::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     (void) stream;
     (void) length;

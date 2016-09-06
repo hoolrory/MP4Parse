@@ -50,7 +50,7 @@ std::string VMHD::getContent( void )
     return o.str();
 }
 
-void VMHD::processData( MP4::BinaryStream * stream, size_t length )
+void VMHD::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     FullBox::processData(stream, length);
     _graphicsMode = stream->readBigEndianUnsignedShort();

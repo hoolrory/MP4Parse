@@ -17,7 +17,7 @@ std::string MOOV::getContent( void )
     return o.str();
 }
 
-void MOOV::processData( MP4::BinaryStream * stream, size_t length )
+void MOOV::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     (void) stream;
     (void) length;

@@ -143,17 +143,17 @@ MP4::Atom* Parser::parseNextAtom()
 {
     std::streampos atomStart = this->_stream->tellg();
     
-    size_t length     = this->_stream->readBigEndianUnsignedInteger();
+    uint64_t length = this->_stream->readBigEndianUnsignedInteger();
     if ( this->_stream->eof() ) {
         return nullptr;
     }
     
-    size_t dataLength = 0;
+    uint64_t dataLength = 0;
     char type[ 5 ];
     memset( type, 0, 5 );
     this->_stream->read( ( char * )type, 4 );
     
-    int headerLength = 8;
+    uint64_t headerLength = 8;
     
     char const hex_chars[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
     
@@ -169,7 +169,7 @@ MP4::Atom* Parser::parseNextAtom()
     if( length == 1 )
     {
         headerLength += 8;
-        dataLength = this->_stream->readBigEndianUnsignedInteger() - 16;
+        dataLength = this->_stream->readBigEndianUnsignedLong() - 16;
     }
     else
     {
@@ -489,7 +489,7 @@ MP4::Atom* Parser::parseNextAtom()
     }
     
     atom->setHeaderLength( headerLength );
-    atom->setDataLength( (int)dataLength );
+    atom->setDataLength( dataLength );
     atom->processData( this->_stream, dataLength );
     
     std::streampos atomEnd = this->_stream->tellg();

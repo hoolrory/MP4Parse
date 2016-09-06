@@ -23,7 +23,7 @@ std::string CTOO::getContent( void )
     return o.str();
 }
 
-void CTOO::processData( MP4::BinaryStream * stream, size_t length )
+void CTOO::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

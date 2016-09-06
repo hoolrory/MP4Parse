@@ -45,7 +45,7 @@ std::string TREX::getContent( void )
     return o.str();
 }
 
-void TREX::processData( MP4::BinaryStream * stream, size_t length )
+void TREX::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

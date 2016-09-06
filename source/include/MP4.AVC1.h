@@ -41,8 +41,7 @@ namespace MP4
         
             std::string getName() { return "H.264 Description"; };
             std::string getContent( void );
-            void processData( MP4::BinaryStream * stream, size_t length );
-            int getDataLength( void );
+            void processData( MP4::BinaryStream * stream, uint64_t length );
         
     };
 }

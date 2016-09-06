@@ -45,7 +45,7 @@ std::string ENOF::getContent( void )
     return o.str();
 }
 
-void ENOF::processData( MP4::BinaryStream * stream, size_t length )
+void ENOF::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

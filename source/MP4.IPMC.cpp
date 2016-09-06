@@ -45,7 +45,7 @@ std::string IPMC::getContent( void )
     return o.str();
 }
 
-void IPMC::processData( MP4::BinaryStream * stream, size_t length )
+void IPMC::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

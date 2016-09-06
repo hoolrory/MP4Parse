@@ -22,7 +22,7 @@ std::string URL::getContent( void )
     return o.str();
 }
 
-void URL::processData( MP4::BinaryStream * stream, size_t length )
+void URL::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     FullBox::processData(stream, length);
 }

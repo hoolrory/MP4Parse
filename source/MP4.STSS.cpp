@@ -56,7 +56,7 @@ std::string STSS::getContent( void )
     return o.str();
 }
 
-void STSS::processData( MP4::BinaryStream * stream, size_t length )
+void STSS::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     FullBox::processData(stream, length);
     _sampleCount = stream->readBigEndianUnsignedInteger();

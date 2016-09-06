@@ -18,7 +18,7 @@ std::string MFRA::getContent( void )
     return o.str();
 }
 
-void MFRA::processData( MP4::BinaryStream * stream, size_t length )
+void MFRA::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     (void) stream;
     (void) length;

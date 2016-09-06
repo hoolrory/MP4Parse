@@ -45,7 +45,7 @@ std::string SMHD::getContent( void )
     return o.str();
 }
 
-void SMHD::processData( MP4::BinaryStream * stream, size_t length )
+void SMHD::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

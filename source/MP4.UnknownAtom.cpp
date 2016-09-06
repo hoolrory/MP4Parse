@@ -77,7 +77,7 @@ std::string UnknownAtom::getContent( void )
     return o.str();
 }
 
-void UnknownAtom::processData( MP4::BinaryStream * stream, size_t length )
+void UnknownAtom::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

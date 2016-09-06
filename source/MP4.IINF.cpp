@@ -45,7 +45,7 @@ std::string IINF::getContent( void )
     return o.str();
 }
 
-void IINF::processData( MP4::BinaryStream * stream, size_t length )
+void IINF::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

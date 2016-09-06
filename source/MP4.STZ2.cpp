@@ -45,7 +45,7 @@ std::string STZ2::getContent( void )
     return o.str();
 }
 
-void STZ2::processData( MP4::BinaryStream * stream, size_t length )
+void STZ2::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

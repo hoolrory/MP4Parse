@@ -52,7 +52,7 @@ namespace MP4
             
         public:
             
-            void processData( MP4::BinaryStream * stream, size_t length );
+            void processData( MP4::BinaryStream * stream, uint64_t length );
     };
 }
 

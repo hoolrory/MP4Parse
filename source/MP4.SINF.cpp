@@ -18,7 +18,7 @@ std::string SINF::getContent( void )
     return o.str();
 }
 
-void SINF::processData( MP4::BinaryStream * stream, size_t length )
+void SINF::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     (void) stream;
     (void) length;

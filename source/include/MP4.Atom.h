@@ -46,8 +46,8 @@ namespace MP4
             
             Atom * _parent;
             std::string _type;
-            int _headerLength;
-            int _dataLength;
+            uint64_t _headerLength;
+            uint64_t _dataLength;
             std::streampos _start;
             std::streampos _end;
         
@@ -57,12 +57,12 @@ namespace MP4
             
             std::string getType( void );
         
-            int getLength( void );
-            int getHeaderLength( void );
-            int getDataLength( void );
+            uint64_t getLength( void );
+            uint64_t getHeaderLength( void );
+            uint64_t getDataLength( void );
         
-            void setHeaderLength( int headerLength );
-            void setDataLength( int dataLength );
+            void setHeaderLength( uint64_t headerLength );
+            void setDataLength( uint64_t dataLength );
         
             void setStreamPos( std::streampos start, std::streampos end );
         
@@ -71,7 +71,7 @@ namespace MP4
         
             virtual std::string getName() { return ""; };
             virtual std::string getContent( void ) = 0;
-            virtual void processData( MP4::BinaryStream * stream, size_t length ) = 0;
+            virtual void processData( MP4::BinaryStream * stream, uint64_t length ) = 0;
     };
 }
 

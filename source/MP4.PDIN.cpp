@@ -45,7 +45,7 @@ std::string PDIN::getContent( void )
     return o.str();
 }
 
-void PDIN::processData( MP4::BinaryStream * stream, size_t length )
+void PDIN::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

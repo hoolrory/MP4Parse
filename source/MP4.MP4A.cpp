@@ -44,7 +44,7 @@ std::string MP4A::getContent( void )
     return o.str();
 }
 
-void MP4A::processData( MP4::BinaryStream * stream, size_t length )
+void MP4A::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore(6);
     _dataReferenceIndex = stream->readBigEndianUnsignedShort();

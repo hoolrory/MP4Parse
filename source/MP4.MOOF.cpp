@@ -18,7 +18,7 @@ std::string MOOF::getContent( void )
     return o.str();
 }
 
-void MOOF::processData( MP4::BinaryStream * stream, size_t length )
+void MOOF::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     (void) stream;
     (void) length;

@@ -45,7 +45,7 @@ std::string CO64::getContent( void )
     return o.str();
 }
 
-void CO64::processData( MP4::BinaryStream * stream, size_t length )
+void CO64::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

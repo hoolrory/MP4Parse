@@ -45,7 +45,7 @@ std::string XML::getContent( void )
     return o.str();
 }
 
-void XML::processData( MP4::BinaryStream * stream, size_t length )
+void XML::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

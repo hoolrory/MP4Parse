@@ -45,7 +45,7 @@ std::string TFRA::getContent( void )
     return o.str();
 }
 
-void TFRA::processData( MP4::BinaryStream * stream, size_t length )
+void TFRA::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     stream->ignore( length );
 }

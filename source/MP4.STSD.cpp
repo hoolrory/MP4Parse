@@ -41,7 +41,7 @@ std::string STSD::getContent( void )
     return o.str();
 }
 
-void STSD::processData( MP4::BinaryStream * stream, size_t length )
+void STSD::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     FullBox::processData(stream, length);
     stream->ignore( 4 );

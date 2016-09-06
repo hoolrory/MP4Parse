@@ -41,27 +41,27 @@ std::string Atom::getType( void )
     return this->_type;
 }
 
-int Atom::getLength( void )
+uint64_t Atom::getLength( void )
 {
     return _headerLength + _dataLength;
 }
 
-int Atom::getHeaderLength( void )
+uint64_t Atom::getHeaderLength( void )
 {
     return _headerLength;
 }
 
-int Atom::getDataLength( void )
+uint64_t Atom::getDataLength( void )
 {
     return _dataLength;
 }
 
-void Atom::setHeaderLength( int headerLength )
+void Atom::setHeaderLength( uint64_t headerLength )
 {
     _headerLength = headerLength;
 }
 
-void Atom::setDataLength( int dataLength )
+void Atom::setDataLength( uint64_t dataLength )
 {
     _dataLength = dataLength;
 }

@@ -56,7 +56,7 @@ std::string STCO::getContent( void )
     return o.str();
 }
 
-void STCO::processData( MP4::BinaryStream * stream, size_t length )
+void STCO::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     FullBox::processData(stream, length);
     _chunkCount = stream->readBigEndianUnsignedInteger();

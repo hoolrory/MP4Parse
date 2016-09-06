@@ -40,7 +40,7 @@ std::string DREF::getContent( void )
     return o.str();
 }
 
-void DREF::processData( MP4::BinaryStream * stream, size_t length )
+void DREF::processData( MP4::BinaryStream * stream, uint64_t length )
 {
     FullBox::processData(stream, length);
     stream->ignore( length - 16 );
