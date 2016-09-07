@@ -212,13 +212,13 @@ void Parser::prettyPrintAtom( Atom * atom, int depth )
     
     ContainerAtom *containerAtom = dynamic_cast<ContainerAtom*>( atom );
     if( containerAtom ) {
-        for( std::vector<MP4::Atom*>::iterator it = containerAtom->getChildren().begin(); it != containerAtom->getChildren().end(); ++it )
+        std::vector<MP4::Atom*> children = containerAtom->getChildren();
+        for( std::vector<MP4::Atom*>::iterator it = children.begin(); it != children.end(); ++it )
         {
             prettyPrintAtom( ( *it ), depth+1 );
         }
     }
 }
-
 
 std::string Parser::getBytes( Atom * atom )
 {
