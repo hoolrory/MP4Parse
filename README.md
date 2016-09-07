@@ -1,29 +1,18 @@
 MP4Parse
 ========
 
-[![Build Status](https://img.shields.io/travis/macmade/MP4Parse.svg?branch=master&style=flat)](https://travis-ci.org/macmade/MP4Parse)
-[![Issues](http://img.shields.io/github/issues/macmade/MP4Parse.svg?style=flat)](https://github.com/macmade/MP4Parse/issues)
-![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)
+Fork of ![macmade/MP4Parse](https://github.com/macmade/MP4Parse) with added iOS library project and miscellaneous improvements.
+
 ![License](https://img.shields.io/badge/license-boost-brightgreen.svg?style=flat)
-[![Contact](https://img.shields.io/badge/contact-@macmade-blue.svg?style=flat)](https://twitter.com/macmade)
 
 About
 -----
 
-C++ library for MP4 file parsing.
+C++ library for MP4 file parsing, with an iOS library for iOS development. 
 
 License
 -------
 
-MP4Parse is released under the terms of the BOOST license.
+Copyright for portions of project MP4Parse are held by Jean-David Gadina - XS-Labs, 2011 as part of project MP4Parse. All other copyright for project MP4Parse are held by Rory Hool, 2016.
 
-Repository Infos
-----------------
-
-    Owner:			Jean-David Gadina - XS-Labs
-    Web:			www.xs-labs.com
-    Blog:			www.noxeos.com
-    Twitter:		@macmade
-    GitHub:			github.com/macmade
-    LinkedIn:		ch.linkedin.com/in/macmade/
-    StackOverflow:	stackoverflow.com/users/182676/macmade
+MP4Parse is released under the terms of the [BOOST license](LICENSE.md).
