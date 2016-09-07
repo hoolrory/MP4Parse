@@ -155,7 +155,6 @@ MP4::Atom* Parser::parseNextAtom()
     memset( type, 0, 5 );
     this->_stream->read( ( char * )type, 4 );
     
-    
     uint64_t headerLength = 8;
     
     if( length == 1 )
@@ -174,9 +173,12 @@ MP4::Atom* Parser::parseNextAtom()
     }
     
     Atom * atom = _atomFactory->instantiateAtom( type );
-    atom->setHeaderLength( headerLength );
-    atom->setDataLength( dataLength );
+    std::streampos start = _stream->tellg();
     atom->processData( this->_stream, dataLength );
+    uint64_t read = _stream->tellg() - start;
+    
+    atom->setHeaderLength( headerLength + read );
+    atom->setDataLength( dataLength - read );
     
     std::streampos atomEnd = this->_stream->tellg();
     
