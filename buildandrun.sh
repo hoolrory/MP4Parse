@@ -1,4 +1,3 @@
-file="$1"
 make
 if [ ! -z $2 ] 
 then
