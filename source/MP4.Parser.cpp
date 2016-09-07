@@ -138,6 +138,14 @@ Parser::Parser( char * filename )
             }
             parentDepth++;
         }
+        
+        // Seems to only happen in some AVC1 atoms
+        // Sometimes after COLOR/PASP child atoms they have an extra 4 bytes.
+        uint64_t diff = parentAtom->getDataLength() - parentAtom->lengthOfChildren();
+        if ( diff > 0 && diff < 8 ) {
+            std::cout << "Not enough space ( " << diff << " bytes ) left in " << parentAtom->getType() << " for child, ignoring\n";
+            _stream->ignore( diff );
+        }
     }
 }
 
