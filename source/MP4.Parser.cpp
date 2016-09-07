@@ -116,15 +116,15 @@ Parser::Parser( char * filename )
             
             if( _verboseLogging )
             {
-                std::cout << " ---- Resetting parent to " << parentAtom->getType() << " at "<< atom->getType() << "\n";
+                std::cout << " ---- Resetting parent to " << parentAtom->getType() << " at " << atom->getType() << "\n";
             }
         }
         if( _verboseLogging )
         {
-            uint64_t diff = parentAtom->getDataLength() - (parentAtom->lengthOfChildren() + atom->getDataLength()) ;
+            uint64_t remaining = parentAtom->getDataLength() - parentAtom->lengthOfChildren() + atom->getLength();
             std::cout << "Adding child " << atom->getType() << " to parent " << parentAtom->getType() << "\n";
             std::cout << "pA->loc = " << parentAtom->lengthOfChildren() << " a.l = " << atom->getLength() << " pA.gdl = " << parentAtom ->getDataLength() << "\n";
-            std::cout << "       remaining = " << diff << "\n";
+            std::cout << "       remaining = " << remaining << "\n";
         }
         parentAtom->addChild(atom);
         
@@ -207,7 +207,7 @@ void Parser::prettyPrint()
 void Parser::prettyPrintAtom( Atom * atom, int depth )
 {
     if( depth != 0 ) {
-        std::cout << std::string(depth, '-') << atom->getType() << " ( " << atom->getName() << " )\n";
+        std::cout << std::string(depth, '-') << " " << atom->getType() << " ( " << atom->getName() << " )\n";
     }
     
     ContainerAtom *containerAtom = dynamic_cast<ContainerAtom*>( atom );
