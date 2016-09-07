@@ -42,10 +42,22 @@ std::string AUTH::getContent( void )
 {
     std::ostringstream o;
     
+    o << "Language: " << this->_language << "\n";
+    o << "Author:   " << this->_author << "\n";
+    
     return o.str();
 }
 
 void AUTH::processData( MP4::BinaryStream * stream, uint64_t length )
 {
-    stream->ignore( length );
+    FullBox::processData( stream, length );
+    
+    _language  = stream->readBigEndianISO639Code();
+    
+    char author[ 5 ];
+    
+    memset( author, 0, 5 );
+    stream->read( author, 5 );
+    _author.append( author );
+
 }
