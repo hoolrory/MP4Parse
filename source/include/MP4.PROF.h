@@ -33,19 +33,21 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.Atom.h"
+#include "MP4.FullBox.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class PROF : public Atom
+    class PROF : public FullBox
     {
         private:
             
             
         protected:
-            
-            
+        
+            double   _width;
+            double   _height;
+        
         public:
             
             PROF( void );

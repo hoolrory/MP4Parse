@@ -42,10 +42,16 @@ std::string ENOF::getContent( void )
 {
     std::ostringstream o;
     
+    o << "Width:  " << this->_width            << "\n";
+    o << "Height: " << this->_height           << "\n";
+    
     return o.str();
 }
 
 void ENOF::processData( MP4::BinaryStream * stream, uint64_t length )
 {
-    stream->ignore( length );
+    FullBox::processData( stream, length );
+    
+    _width = stream->readBigEndianUnsignedInteger() / 65536;
+    _height = stream->readBigEndianUnsignedInteger() / 65536;
 }
