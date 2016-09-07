@@ -582,11 +582,6 @@ std::istream & BinaryStream::ignore( uint64_t n, int delim )
     return stream.ignore( (std::streamsize)n, delim );
 }
 
-std::istream & BinaryStream::ignore( std::streamsize n, int delim )
-{
-    return stream.ignore( n, delim );
-}
-
 std::istream & BinaryStream::read( char * s, std::streamsize n )
 {
     return stream.read( s, n );

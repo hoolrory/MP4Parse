@@ -124,7 +124,6 @@ namespace MP4
             std::istream & getline(char * s, std::streamsize n );
             std::istream & getline(char * s, std::streamsize n, char delim );
             std::istream & ignore( uint64_t n = 1, int delim = EOF );
-            std::istream & ignore( std::streamsize n = 1, int delim = EOF );
             std::istream & read( char * s, std::streamsize n );
             std::istream & putback( char c );
             std::istream & unget( void );
