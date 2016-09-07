@@ -66,6 +66,7 @@ EXEC                = mp4parse
 #-------------------------------------------------------------------------------
 
 DEPS_mp4parse       = MP4.Atom \
+                      MP4.AtomFactory \
 					  MP4.AVC1 \
 					  MP4.AVCC \
                       MP4.BinaryStream \

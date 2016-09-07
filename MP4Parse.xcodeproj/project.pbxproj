@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F15B8721D7F12D000164CBD /* MP4.AtomFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F15B8711D7F12D000164CBD /* MP4.AtomFactory.cpp */; };
 		1F6E3A401D45177A0008CDD5 /* MP4Parse.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F6E3A3F1D45177A0008CDD5 /* MP4Parse.h */; };
 		1F6E3A421D45177A0008CDD5 /* MP4Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3A411D45177A0008CDD5 /* MP4Parse.m */; };
 		1F6E3BAF1D451DFA0008CDD5 /* MP4.Atom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3B751D451DFA0008CDD5 /* MP4.Atom.cpp */; };
@@ -108,6 +109,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F15B8711D7F12D000164CBD /* MP4.AtomFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.AtomFactory.cpp; path = source/MP4.AtomFactory.cpp; sourceTree = "<group>"; };
+		1F15B8731D7F12FB00164CBD /* MP4.AtomFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MP4.AtomFactory.h; path = source/include/MP4.AtomFactory.h; sourceTree = SOURCE_ROOT; };
 		1F6E3A3C1D45177A0008CDD5 /* libMP4Parse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMP4Parse.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6E3A3F1D45177A0008CDD5 /* MP4Parse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MP4Parse.h; sourceTree = "<group>"; };
 		1F6E3A411D45177A0008CDD5 /* MP4Parse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MP4Parse.m; sourceTree = "<group>"; };
@@ -327,6 +330,7 @@
 		1F6E3B741D451DDF0008CDD5 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				1F15B8711D7F12D000164CBD /* MP4.AtomFactory.cpp */,
 				1F6E3B751D451DFA0008CDD5 /* MP4.Atom.cpp */,
 				1F8BF53E1D537836002229BF /* MP4.AVC1.cpp */,
 				1F8BF5491D53DB21002229BF /* MP4.AVCC.cpp */,
@@ -419,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				1F6E3BEA1D451E230008CDD5 /* atoms.h */,
+				1F15B8731D7F12FB00164CBD /* MP4.AtomFactory.h */,
 				1F6E3BEB1D451E230008CDD5 /* MP4.Atom.h */,
 				1F8BF5411D537F07002229BF /* MP4.AVC1.h */,
 				1F8BF54C1D53DB34002229BF /* MP4.AVCC.h */,
@@ -627,6 +632,7 @@
 				1F8BF5591D54E629002229BF /* MP4.CTOO.cpp in Sources */,
 				1F8BF5A31D5B6990002229BF /* MP4.MINF.cpp in Sources */,
 				1F6E3BDB1D451DFA0008CDD5 /* MP4.STTS.cpp in Sources */,
+				1F15B8721D7F12D000164CBD /* MP4.AtomFactory.cpp in Sources */,
 				1F6E3BBF1D451DFA0008CDD5 /* MP4.HMHD.cpp in Sources */,
 				1F6E3BE61D451DFA0008CDD5 /* MP4.VMHD.cpp in Sources */,
 				1F8BF5A41D5B6990002229BF /* MP4.MOOF.cpp in Sources */,

@@ -35,6 +35,7 @@
 
 #include "mp4.h"
 #include "MP4.BinaryStream.h"
+#include "MP4.AtomFactory.h"
 #include "atoms.h"
 
 namespace MP4
@@ -68,7 +69,8 @@ namespace MP4
             
             
         protected:
-            
+        
+            AtomFactory  * _atomFactory;
             BinaryStream * _stream;
             File         * _file;
             bool           _verboseLogging;
@@ -82,7 +84,8 @@ namespace MP4
             ~Parser( void );
         
             Atom * getRootAtom( void );
-            void prettyPrint( void );
+            void prettyPrint();
+            void prettyPrintAtom( Atom * atom, int depth );
         
             std::string getBytes( Atom * atom );
         
