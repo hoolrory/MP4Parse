@@ -33,18 +33,23 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.Atom.h"
+#include "MP4.FullBox.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class CSLG : public Atom
+    class CSLG : public FullBox
     {
         private:
             
-            
         protected:
-            
+        
+        uint32_t _shift;
+        uint32_t _leastDelta;
+        uint32_t _greatestDelta;
+        uint32_t _displayStartTime;
+        uint32_t _displayEndTime;
+        
             
         public:
             

@@ -42,8 +42,6 @@ std::string CTTS::getContent( void )
 {
     std::ostringstream o;
     
-    
-    
     o << "Entry Count: " << this->_entryCount << "\n";
     o << "Entries:\n";
     o << "  Count     Offset \n";

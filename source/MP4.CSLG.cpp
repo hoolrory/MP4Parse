@@ -41,11 +41,22 @@ CSLG::CSLG( void )
 std::string CSLG::getContent( void )
 {
     std::ostringstream o;
+    o << "Shift:              " << this->_shift << "\n";
+    o << "Least Delta:        " << this->_leastDelta << "\n";
+    o << "Greatest Delta:     " << this->_greatestDelta << "\n";
+    o << "Display Start Time: " << this->_displayStartTime << "\n";
+    o << "Display End Time:   " << this->_displayEndTime << "\n";
     
     return o.str();
 }
 
 void CSLG::processData( MP4::BinaryStream * stream, uint64_t length )
 {
-    stream->ignore( length );
+    FullBox::processData( stream, length );
+    
+    _shift = stream->readBigEndianUnsignedInteger();
+    _leastDelta = stream->readBigEndianUnsignedInteger();
+    _greatestDelta = stream->readBigEndianUnsignedInteger();
+    _displayStartTime = stream->readBigEndianUnsignedInteger();
+    _displayEndTime = stream->readBigEndianUnsignedInteger();
 }
