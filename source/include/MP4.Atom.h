@@ -58,7 +58,6 @@ namespace MP4
             std::string getType( void );
         
             uint64_t getLength( void );
-            uint64_t getHeaderLength( void );
             uint64_t getDataLength( void );
         
             void setHeaderLength( uint64_t headerLength );

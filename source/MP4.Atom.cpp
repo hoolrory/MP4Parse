@@ -46,11 +46,6 @@ uint64_t Atom::getLength( void )
     return _headerLength + _dataLength;
 }
 
-uint64_t Atom::getHeaderLength( void )
-{
-    return _headerLength;
-}
-
 uint64_t Atom::getDataLength( void )
 {
     return _dataLength;
