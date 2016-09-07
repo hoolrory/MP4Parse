@@ -71,7 +71,6 @@ DEPS_mp4parse       = MP4.Atom \
 					  MP4.AVCC \
                       MP4.BinaryStream \
                       MP4.ContainerAtom \
-                      MP4.DataAtom \
                       MP4.File \
                       MP4.FullBox \
                       MP4.Parser \
