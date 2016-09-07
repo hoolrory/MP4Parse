@@ -36,13 +36,28 @@ int main( int argc, char * argv[] )
 {
     MP4::Parser * parser;
     
-    if( argc != 2 )
+    if( argc < 2 )
     {
         std::cout << "Usage: " << argv[ 0 ] << " FILENAME\n";
+        std::cout << "       " << argv[ 0 ] << " -v FILENAME\n";
+        return EXIT_FAILURE;
+    }
+   
+    char * file;
+    bool verbose = false;
+    
+    if( argc == 2 )
+    {
+        file = argv[1];
+    }
+    else
+    {
+        verbose = std::strcmp( argv[1], "-v" ) == 0;
+        file = argv[2];
     }
     
-    parser = new MP4::Parser( argv[ 1 ] );
-    parser->prettyPrint();
+    parser = new MP4::Parser( file );
+    parser->prettyPrint( verbose );
     delete parser;
     
     return EXIT_SUCCESS;

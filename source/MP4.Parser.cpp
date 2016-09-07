@@ -206,16 +206,19 @@ Atom* Parser::getRootAtom( void )
     return _file;
 }
 
-void Parser::prettyPrint()
+void Parser::prettyPrint( bool verbose )
 {
-    prettyPrintAtom( _file, 0 );
+    prettyPrintAtom( _file, 0, verbose );
 }
 
 
-void Parser::prettyPrintAtom( Atom * atom, int depth )
+void Parser::prettyPrintAtom( Atom * atom, int depth, bool verbose )
 {
     if( depth != 0 ) {
         std::cout << std::string(depth, '-') << " " << atom->getType() << " ( " << atom->getName() << " )\n";
+        if( verbose ) {
+            std::cout << atom->getContent() << "\n";
+        }
     }
     
     ContainerAtom *containerAtom = dynamic_cast<ContainerAtom*>( atom );
@@ -223,7 +226,7 @@ void Parser::prettyPrintAtom( Atom * atom, int depth )
         std::vector<MP4::Atom*> children = containerAtom->getChildren();
         for( std::vector<MP4::Atom*>::iterator it = children.begin(); it != children.end(); ++it )
         {
-            prettyPrintAtom( ( *it ), depth+1 );
+            prettyPrintAtom( ( *it ), depth+1, verbose );
         }
     }
 }

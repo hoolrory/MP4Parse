@@ -84,8 +84,8 @@ namespace MP4
             ~Parser( void );
         
             Atom * getRootAtom( void );
-            void prettyPrint();
-            void prettyPrintAtom( Atom * atom, int depth );
+            void prettyPrint( bool verbose );
+            void prettyPrintAtom( Atom * atom, int depth, bool verbose );
         
             std::string getBytes( Atom * atom );
         
