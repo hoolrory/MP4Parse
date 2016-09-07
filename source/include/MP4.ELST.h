@@ -33,19 +33,29 @@
 #pragma once
 
 #include "mp4.h"
-#include "MP4.Atom.h"
+#include "MP4.FullBox.h"
 #include "MP4.BinaryStream.h"
 
 namespace MP4
 {
-    class ELST : public Atom
+    class ELST : public FullBox
     {
+        typedef struct _entry
+        {
+            uint64_t segmentDuration;
+            uint64_t mediaTime;
+            double mediaRate;
+        }
+        Entry;
+        
         private:
             
             
         protected:
-            
-            
+        
+            uint32_t _entryCount;
+            std::vector<Entry> _entries;
+        
         public:
             
             ELST( void );

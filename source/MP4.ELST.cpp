@@ -42,10 +42,45 @@ std::string ELST::getContent( void )
 {
     std::ostringstream o;
     
+    o << "Entry Count: " << this->_entryCount << "\n";
+    o << "Entries:\n";
+    o << "Segment Duration   Time   Rate\n";
+    int count = _entries.size();
+    int omitted = 0;
+    if( count > 20 )
+    {
+        omitted = _entries.size() - 20;
+        count = 20;
+    }
+    for(int i = 0; i < count; i++)
+    {
+        o << "    " << _entries[i].segmentDuration << "          " << _entries[i].mediaTime << "      " << _entries[i].mediaRate << "\n";
+    }
+    if( omitted > 0 )
+    {
+        o << "  " << omitted << " entries omitted\n";
+    }
+    
     return o.str();
 }
 
 void ELST::processData( MP4::BinaryStream * stream, uint64_t length )
 {
-    stream->ignore( length );
+    FullBox::processData( stream, length );
+    _entryCount = stream->readBigEndianUnsignedInteger();
+    
+    for( uint32_t i = 0; i < _entryCount; i++ )
+    {
+        Entry entry;
+        if( _version == 1 ) {
+            entry.segmentDuration = stream->readBigEndianUnsignedLong();
+            entry.mediaTime = stream->readUnsignedLong();
+        } else {
+            entry.segmentDuration = stream->readBigEndianUnsignedInteger();
+            entry.mediaTime = stream->readUnsignedInteger();
+        }
+        entry.mediaRate = stream->readBigEndianUnsignedInteger() / 65536;
+        
+        _entries.push_back(entry);
+    }
 }
