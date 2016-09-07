@@ -68,11 +68,13 @@ std::string AtomFactory::typeToHex( char* type )
 
 void AtomFactory::initMap( void )
 {
+    _map["auth"] = &createInstance<AUTH>;
     _map["avc1"] = &createInstance<AVC1>;
     _map["avcC"] = &createInstance<AVCC>;
     _map["bxml"] = &createInstance<BXML>;
     _map["clef"] = &createInstance<CLEF>;
     _map["co64"] = &createInstance<CO64>;
+    _map["cslg"] = &createInstance<CSLG>;
     _map["cprt"] = &createInstance<CPRT>;
     _map["ctts"] = &createInstance<CTTS>;
     _map["dinf"] = &createInstance<DINF>;
@@ -90,6 +92,7 @@ void AtomFactory::initMap( void )
     _map["iloc"] = &createInstance<ILOC>;
     _map["ilst"] = &createInstance<ILST>;
     _map["imif"] = &createInstance<IMIF>;
+    _map["iods"] = &createInstance<IODS>;
     _map["ipmc"] = &createInstance<IPMC>;
     _map["ipro"] = &createInstance<IPRO>;
     _map["mdat"] = &createInstance<MDAT>;
@@ -139,8 +142,10 @@ void AtomFactory::initMap( void )
     _map["trex"] = &createInstance<TREX>;
     _map["trun"] = &createInstance<TRUN>;
     _map["udta"] = &createInstance<UDTA>;
+    _map["uuid"] = &createInstance<UUID>;
     _map["url "] = &createInstance<URL>;
     _map["vmhd"] = &createInstance<VMHD>;
+    _map["wide"] = &createInstance<WIDE>;
     _map["xml "] = &createInstance<XML>;
 }
 

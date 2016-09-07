@@ -34,6 +34,7 @@
 #pragma once
 
 #include "MP4.Atom.h"
+#include "MP4.AUTH.h"
 #include "MP4.AVC1.h"
 #include "MP4.AVCC.h"
 #include "MP4.ContainerAtom.h"
@@ -44,6 +45,7 @@
 #include "MP4.CLEF.h"
 #include "MP4.CO64.h"
 #include "MP4.CPRT.h"
+#include "MP4.CSLG.h"
 #include "MP4.CTTS.h"
 #include "MP4.DINF.h"
 #include "MP4.DREF.h"
@@ -60,6 +62,7 @@
 #include "MP4.ILOC.h"
 #include "MP4.ILST.h"
 #include "MP4.IMIF.h"
+#include "MP4.IODS.h"
 #include "MP4.IPMC.h"
 #include "MP4.IPRO.h"
 #include "MP4.MDAT.h"
@@ -110,7 +113,9 @@
 #include "MP4.TRUN.h"
 #include "MP4.UDTA.h"
 #include "MP4.URL.h"
+#include "MP4.UUID.h"
 #include "MP4.VMHD.h"
+#include "MP4.WIDE.h"
 #include "MP4.XML.h"
 #include "MP4.CTOO.h"
 
