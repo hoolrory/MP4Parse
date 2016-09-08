@@ -300,7 +300,6 @@
 		1F9B4A131D7B7A1F00D07EAD /* MP4.ENOF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.ENOF.cpp; path = source/MP4.ENOF.cpp; sourceTree = "<group>"; };
 		1F9B4A141D7B7A1F00D07EAD /* MP4.PROF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.PROF.cpp; path = source/MP4.PROF.cpp; sourceTree = "<group>"; };
 		1F9B4A151D7B7A1F00D07EAD /* MP4.CLEF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MP4.CLEF.cpp; path = source/MP4.CLEF.cpp; sourceTree = "<group>"; };
-		1F9B4A191D7B7BCC00D07EAD /* makefile-config.mk */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "makefile-config.mk"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,7 +332,6 @@
 		1F6E3A3E1D45177A0008CDD5 /* MP4Parse */ = {
 			isa = PBXGroup;
 			children = (
-				1F9B4A191D7B7BCC00D07EAD /* makefile-config.mk */,
 				1F6E3BE91D451E0C0008CDD5 /* include */,
 				1F6E3B741D451DDF0008CDD5 /* source */,
 				1F6E3A3F1D45177A0008CDD5 /* MP4Parse.h */,
