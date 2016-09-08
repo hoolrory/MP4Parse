@@ -45,8 +45,8 @@ std::string CTTS::getContent( void )
     o << "Entry Count: " << this->_entryCount << "\n";
     o << "Entries:\n";
     o << "  Count     Offset \n";
-    int count = _entries.size();
-    int omitted = 0;
+    long count = _entries.size();
+    long omitted = 0;
     if( count > 20 )
     {
         omitted = _entries.size() - 20;

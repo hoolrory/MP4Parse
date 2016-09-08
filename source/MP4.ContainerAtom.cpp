@@ -64,14 +64,14 @@ bool ContainerAtom::hasChildren( void )
     return _children.size() > 0;
 }
 
-unsigned int ContainerAtom::numberOfChildren( void )
+unsigned long ContainerAtom::numberOfChildren( void )
 {
     return _children.size();
 }
 
-int ContainerAtom::lengthOfChildren( void )
+uint64_t ContainerAtom::lengthOfChildren( void )
 {
-    int length = 0;
+    uint64_t length = 0;
     for( std::vector<MP4::Atom*>::iterator it = _children.begin(); it != _children.end(); ++it )
     {
         length += ( *it )->getLength();
