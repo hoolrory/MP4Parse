@@ -251,5 +251,5 @@ std::string Parser::getBytes( Atom * atom )
         }
         o2 << hex(s[0]) << " ";
     }
-    return o1.str() + "\n\n" + o2.str();
+    return "Bytes:\n" + o1.str() + "\n\nString:\n" + o2.str();
 }
