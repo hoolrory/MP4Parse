@@ -236,20 +236,21 @@ std::string Parser::getBytes( Atom * atom )
     this->_stream->clear();
     this->_stream->seekg(atom->getStartStreamPos());
     
-    std::ostringstream o1;
-    std::ostringstream o2;
+    std::ostringstream byteStream;
+    std::ostringstream stringStream;
     
     while( this->_stream->tellg() != atom->getEndStreamPos() ) {
         char s[1];
         memset(s, 0, 1);
         this->_stream->read((char *)s, 1);
         
+        byteStream << hex(s[0]) << " ";
+        
         if ( s[0] == '\0' ) {
-            o1 << '.';
+            stringStream << '.';
         } else {
-            o1 << s[0];
+            stringStream << s[0];
         }
-        o2 << hex(s[0]) << " ";
     }
-    return "Bytes:\n" + o1.str() + "\n\nString:\n" + o2.str();
+    return "Bytes:\n" + byteStream.str() + "\n\nString:\n" + stringStream.str();
 }
