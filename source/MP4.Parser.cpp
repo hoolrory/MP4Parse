@@ -236,10 +236,16 @@ std::string Parser::getBytes( Atom * atom )
     this->_stream->clear();
     this->_stream->seekg(atom->getStartStreamPos());
     
+    std::ostringstream prefix;
     std::ostringstream byteStream;
     std::ostringstream stringStream;
     
+    uint64_t read = 0;
     while( this->_stream->tellg() != atom->getEndStreamPos() ) {
+        if( read > 2500 ) {
+            prefix << "Truncated to 2500 bytes\n\n";
+            break;
+        }
         char s[1];
         memset(s, 0, 1);
         this->_stream->read((char *)s, 1);
@@ -251,6 +257,8 @@ std::string Parser::getBytes( Atom * atom )
         } else {
             stringStream << s[0];
         }
+        read++;
     }
-    return "Bytes:\n" + byteStream.str() + "\n\nString:\n" + stringStream.str();
+    
+    return prefix.str() + "Bytes:\n" + byteStream.str() + "\n\nString:\n" + stringStream.str();
 }
