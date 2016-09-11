@@ -42,15 +42,15 @@ std::string TKHD::getContent( void )
 {
     std::ostringstream o;
     
-    o << "Creation time:     " << this->_creationTime     << "\n";
-    o << "Modification time: " << this->_modificationTime << "\n";
-    o << "Duration:          " << this->_duration         << "\n";
-    o << "Layer:             " << this->_layer            << "\n";
-    o << "Track ID:          " << this->_trackId          << "\n";
-    o << "Volume:            " << this->_volume           << "\n";
-    o << "Width:             " << this->_width            << "\n";
-    o << "Height:            " << this->_height           << "\n";
-    o << "Alternate Group    " << this->_alternateGroup   << "\n";
+    o << "Creation time:     " << formatTime(_creationTime)     << "\n";
+    o << "Modification time: " << formatTime(_modificationTime) << "\n";
+    o << "Duration:          " << this->_duration               << "\n";
+    o << "Layer:             " << this->_layer                  << "\n";
+    o << "Track ID:          " << this->_trackId                << "\n";
+    o << "Volume:            " << this->_volume                 << "\n";
+    o << "Width:             " << this->_width                  << "\n";
+    o << "Height:            " << this->_height                 << "\n";
+    o << "Alternate Group    " << this->_alternateGroup         << "\n";
     o << "Matrix:            " << "\n";
     o << this->_matrix.print();
     

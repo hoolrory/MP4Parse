@@ -75,3 +75,12 @@ std::streampos Atom::getStartStreamPos()
 std::streampos Atom::getEndStreamPos() {
     return _end;
 }
+
+std::string Atom::formatTime(uint64_t timeStamp) {
+    std::time_t rawtime = timeStamp - 2082844800L;
+    std::tm* timeinfo;
+    char creationTimeFormatted [80];
+    timeinfo = std::localtime(&rawtime);
+    std::strftime(creationTimeFormatted,80,"%Y-%m-%d %l:%M %p",timeinfo);
+    return std::string(creationTimeFormatted);
+}

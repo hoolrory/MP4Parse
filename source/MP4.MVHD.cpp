@@ -42,12 +42,12 @@ std::string MVHD::getContent( void )
 {
     std::ostringstream o;
     
-    o << "Creation time:     " << this->_creationTime     << "\n";
-    o << "Modification time: " << this->_modificationTime << "\n";
-    o << "Time scale:        " << this->_timeScale        << "\n";
-    o << "Duration:          " << this->_duration         << "\n";
-    o << "Rate:              " << this->_rate             << "\n";
-    o << "Volume:            " << this->_volume           << "\n";
+    o << "Creation time:     " << formatTime(_creationTime)     << "\n";
+    o << "Modification time: " << formatTime(_modificationTime) << "\n";
+    o << "Time scale:        " << this->_timeScale              << "\n";
+    o << "Duration:          " << this->_duration               << "\n";
+    o << "Rate:              " << this->_rate                   << "\n";
+    o << "Volume:            " << this->_volume                 << "\n";
     o << "Matrix:            " << "\n";
     o << this->_matrix.print();
     return o.str();

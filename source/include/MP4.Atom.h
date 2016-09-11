@@ -67,6 +67,7 @@ namespace MP4
         
             std::streampos getStartStreamPos();
             std::streampos getEndStreamPos();
+            std::string formatTime(uint64_t timeStamp);
         
             virtual std::string getName() { return ""; };
             virtual std::string getContent( void ) = 0;
